@@ -1,0 +1,6 @@
+@import "../styles/tm-variables.scss";
+@import "../styles/tm-mixins.scss";
+
+.content-wrapper {
+    @include flex-layout();
+}

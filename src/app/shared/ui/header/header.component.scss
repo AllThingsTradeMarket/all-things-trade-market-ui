@@ -1,0 +1,11 @@
+@import "../../../../styles/tm-mixins.scss";
+@import "../../../../styles/tm-variables.scss";
+
+.header {
+    @include full-screen-container();
+    .app-logo {
+        font-size: 2em;
+        color: $main-color-dark;
+        font-weight: bold;
+    }
+}

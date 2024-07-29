@@ -1,0 +1,50 @@
+@import "./tm-variables.scss";
+
+@mixin font-hover-effect($color: white) {
+    &:hover {
+        color: $color;
+    }
+}
+
+@mixin container($bg: $container-dark-color, $br: 2px, $padding: $default-padding) {
+    background-color: $bg;
+    border-radius: $br;
+    padding: $padding;
+}
+
+@mixin full-screen-container($bg: $container-dark-color, $padding: $default-padding) {
+    @include container($bg, 0, $padding);
+}
+
+@mixin hover-effect($cursor: pointer) {
+    &:hover {
+        cursor: $cursor;
+        @content;
+    }
+}
+
+@mixin basic-box-shadow($width, $opacity) {
+    box-shadow: 0 0 $width rgba(black, $opacity);
+}
+
+@mixin simple-transition($property, $time: .3s, $before-transition-value, $after-transition-value, $cursor: pointer) {
+    transition: #{$property} $time;
+    #{$property}: $before-transition-value;
+    will-change: #{$property};
+
+    @include hoverEffect($cursor) {
+        #{$property}: $after-transition-value;
+    }
+}
+
+@mixin opacity-transition($time: .3s, $before-transition-value: 1, $after-transition-value: .9, $cursor: pointer) {
+    @include addSimpleTransition(opacity, $time, $before-transition-value, $after-transition-value, $cursor);
+}
+
+@mixin flex-layout($direction: column, $align-items: default, $justify-content: default, $gap: $default-gap) {
+    display: flex;
+    flex-direction: $direction;
+    align-items: $align-items;
+    justify-content: $justify-content;
+    gap: $gap;
+}
