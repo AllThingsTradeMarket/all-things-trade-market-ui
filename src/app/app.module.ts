@@ -7,10 +7,11 @@ import { HeaderModule } from './shared/ui/header/header.module';
 import { FooterModule } from './shared/ui/footer/footer.module';
 import { NavModule } from './shared/ui/nav/nav.module';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
-    AppComponent,
+    AppComponent
   ],
   imports: [
     BrowserModule,
@@ -18,7 +19,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     HeaderModule,
     FooterModule,
     NavModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

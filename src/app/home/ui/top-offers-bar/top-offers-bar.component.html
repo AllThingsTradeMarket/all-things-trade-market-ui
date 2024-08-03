@@ -1,0 +1,9 @@
+<div class="top-offers">
+    <div class="offer-tile" *ngFor="let offer of topOffers">
+        <h2>{{ offer.name }}</h2>
+        <p>
+            {{offer.description}}
+        </p>
+        <strong>price: {{ offer.price }}</strong>
+    </div>
+</div>

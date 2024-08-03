@@ -38,8 +38,7 @@ import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 @Component({
   selector: '$APP_PRE_SELECTOR-$PAGE_NAME',
   templateUrl: './$PAGE_NAME.page.html',
-  styleUrls: ['./$PAGE_NAME.page.scss'],
-   changeDetection: ChangeDetectionStrategy.OnPush
+  styleUrls: ['./$PAGE_NAME.page.scss']
 })
 export class $PAGE_COMPONENT_NAME implements OnInit {
     constructor() {}
