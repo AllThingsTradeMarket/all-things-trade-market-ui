@@ -1,0 +1,27 @@
+@import "../../../../styles/tm-mixins.scss";
+@import "../../../../styles/tm-variables.scss";
+
+.footer {
+    @include full-screen-container();
+    .content-wrapper {
+        display: grid;
+        place-items: center;
+        .logo {
+            font-size: $fs-bigger;
+        }
+
+        .info {
+            font-size: $fs-slightly-bigger;
+        }
+
+        .socials {
+            @include flex-layout();
+            .links {
+                @include flex-layout(row, center, center);
+                .social-link {
+                    font-size: $fs-bigger;
+                }
+            }
+        }
+    }
+}

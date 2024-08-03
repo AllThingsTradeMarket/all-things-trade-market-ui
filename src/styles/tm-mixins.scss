@@ -13,7 +13,13 @@
 }
 
 @mixin full-screen-container($bg: $container-dark-color, $padding: $default-padding) {
+    width: calc(100vw - 2*$padding);
     @include container($bg, 0, $padding);
+    display: grid;
+    justify-items: center;
+    .content-wrapper {
+        width: $content-width;
+    }
 }
 
 @mixin hover-effect($cursor: pointer) {
@@ -32,7 +38,7 @@
     #{$property}: $before-transition-value;
     will-change: #{$property};
 
-    @include hoverEffect($cursor) {
+    @include hover-effect($cursor) {
         #{$property}: $after-transition-value;
     }
 }

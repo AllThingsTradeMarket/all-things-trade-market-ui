@@ -1,6 +1,9 @@
 @import "../styles/tm-variables.scss";
 @import "../styles/tm-mixins.scss";
 
-.content-wrapper {
+.page-content-wrapper {
     @include flex-layout();
+    .app-content {
+        @include full-screen-container(black);
+    }
 }

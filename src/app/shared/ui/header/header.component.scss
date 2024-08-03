@@ -3,9 +3,7 @@
 
 .header {
     @include full-screen-container();
-    .app-logo {
-        font-size: 2em;
-        color: $main-color-dark;
-        font-weight: bold;
+    .content-wrapper {
+        @include flex-layout(row, center, default, 2*$default-gap);
     }
 }

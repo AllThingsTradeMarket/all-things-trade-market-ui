@@ -1,0 +1,10 @@
+@import "../../../../styles/tm-mixins.scss";
+@import "../../../../styles/tm-variables.scss";
+
+.nav {
+    .nav-list {
+        list-style-type: none;
+        @include flex-layout(row, center, $gap: 2 * $default-gap);
+        font-size: $fs-bigger;
+    }
+}

@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 
 // colors
-$main-color-dark: #fa5511;
+$main-color-dark: #d44c11;
 $main-color-light: #fd5611;
 $container-dark-color: #333;
 
@@ -13,4 +13,20 @@ $default-padding: 1rem;
 $default-gap: 1rem;
 
 // widths
-$content-width: min(100%, 800px)
+$max-content-width: 1400px;
+$content-width: min(100%, $max-content-width);
+
+// font-sizes
+$fs-tiny: .7em;
+$fs-smaller: .8em;
+$fs-small: .9em;
+$fs-normal: 1em;
+$fs-slightly-bigger: 1.1em;
+$fs-big: 1.25em;
+$fs-bigger: 1.5em;
+$fs-large: 1.75em;
+$fs-huge: 2em;
+$fs-biggest: 3em;
+
+// button
+$btn-border-radius: 2px;

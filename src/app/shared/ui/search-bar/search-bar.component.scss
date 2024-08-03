@@ -1,0 +1,15 @@
+@use "sass:math";
+@import "../../../../styles/tm-mixins.scss";
+@import "../../../../styles/tm-variables.scss";
+
+.content-wrapper {
+    width: 100%;
+    @include flex-layout(row, $gap: 0);
+    .search-bar {
+        font-size: $fs-big;
+        padding: math.div($default-padding, 2) $default-padding;
+        border-radius: $btn-border-radius;
+        border: none;
+        flex: 1 1 $max-content-width / 2;
+    }
+}

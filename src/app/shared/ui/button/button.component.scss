@@ -1,0 +1,11 @@
+@use 'sass:math';
+@import "../../../../styles/tm-mixins.scss";
+@import "../../../../styles/tm-variables.scss";
+
+.btn {
+    border-radius: $btn-border-radius;
+    border: none;
+    color: white;
+    padding: math.div($default-padding, 2) $default-padding;
+    @include simple-transition(background-color, .3s, $main-color-light, $main-color-dark);
+}

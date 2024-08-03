@@ -1,0 +1,8 @@
+@import "../../../../styles/tm-mixins.scss";
+@import "../../../../styles/tm-variables.scss";
+
+.app-logo {
+    font-size: $fs-huge;
+    color: $main-color-dark;
+    font-weight: bold;
+}
