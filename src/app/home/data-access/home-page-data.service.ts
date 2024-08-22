@@ -9,8 +9,4 @@ import { ApiResponse } from '../../shared/model/shared.types';
 })
 export class HomePageDataService {
   constructor(private apiService: ApiService) { }
-
-  getTopOffers(): Observable<ApiResponse<Offer[]>> {
-    return this.apiService.get<Offer[]>('offers/top');
-  }
 }

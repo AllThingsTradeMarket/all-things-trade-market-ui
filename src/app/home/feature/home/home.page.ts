@@ -11,10 +11,7 @@ export class HomePage implements OnInit {
   topOffers: Offer[] = [];
 
   constructor(private homePageDataService: HomePageDataService) {
-    this.homePageDataService.getTopOffers().subscribe((topOffers) => {
-      this.topOffers = topOffers.response;
-      console.log(this.topOffers)
-    });
+
   }
 
   ngOnInit() { }
