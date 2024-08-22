@@ -3,7 +3,20 @@
 
 .header {
     @include full-screen-container();
+
     .content-wrapper {
-        @include flex-layout(row, center, default, 2*$default-gap);
+        @include flex-layout(row, center, space-between, 2 * $default-gap);
+
+        .tm-logo {
+            flex-shrink: 0;
+        }
+
+        .tm-search-bar {
+            flex-grow: 1;
+        }
+
+        .tm-nav {
+            flex-shrink: 0;
+        }
     }
 }
