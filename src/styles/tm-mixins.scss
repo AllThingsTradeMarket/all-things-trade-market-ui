@@ -6,20 +6,34 @@
     }
 }
 
-@mixin container($bg: $container-dark-color, $br: 2px, $padding: $default-padding) {
+@mixin container($bg: $container-dark-color, $br: $br-s, $padding: $default-padding) {
     background-color: $bg;
     border-radius: $br;
     padding: $padding;
 }
 
 @mixin full-screen-container($bg: $container-dark-color, $padding: $default-padding) {
-    width: calc(100vw - 2*$padding);
     @include container($bg, 0, $padding);
     display: grid;
     justify-items: center;
     .content-wrapper {
         width: $content-width;
     }
+}
+
+@mixin centered() {
+    display: grid;
+    place-items: center;
+}
+
+@mixin centered-vert() {
+    display: grid;
+    align-items: center;
+}
+
+@mixin centered-hor() {
+    display: grid;
+    justify-items: center;
 }
 
 @mixin hover-effect($cursor: pointer) {

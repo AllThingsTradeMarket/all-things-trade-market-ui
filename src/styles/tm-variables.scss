@@ -4,6 +4,7 @@
 $main-color-dark: #d44c11;
 $main-color-light: #fd5611;
 $container-dark-color: #333;
+$page-bg: black;
 
 // fonts
 $open-sans: "Open Sans", sans-serif;
@@ -28,5 +29,15 @@ $fs-large: 1.75em;
 $fs-huge: 2em;
 $fs-biggest: 3em;
 
-// button
-$btn-border-radius: 2px;
+// paddings
+$padding-s: .25em;
+$padding-m: .5em;
+$padding-l: 1em;
+$padding-xl: 1.5em;
+$padding-xxl: 2em;
+
+// border-radius
+$br-s: 2px;
+$br-m: 4px;
+$br-l: .5em;
+$br-xl: 1rem;

@@ -1,11 +1,11 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
-  selector: 'tm-button',
-  templateUrl: './button.component.html',
-  styleUrls: ['./button.component.scss']
+  selector: 'tm-container',
+  templateUrl: './container.component.html',
+  styleUrls: ['./container.component.scss']
 })
-export class ButtonComponent {
+export class ContainerComponent {
   @Input() text!: string;
   @Input() fontSize: string = '1em';
   @Input() disabled: boolean = false;

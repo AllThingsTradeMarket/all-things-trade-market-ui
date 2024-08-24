@@ -15,6 +15,20 @@ const routes: Routes = [
             import('../offers/offers.module').then(
                 m => m.OffersPageModule
             )
+    },
+    {
+        path: 'register',
+        loadChildren: () =>
+            import('../register/register.module').then(
+                m => m.RegisterPageModule
+            )
+    },
+    {
+        path: 'login',
+        loadChildren: () =>
+            import('../login/login.module').then(
+                m => m.LoginPageModule
+            )
     }
 ];
 

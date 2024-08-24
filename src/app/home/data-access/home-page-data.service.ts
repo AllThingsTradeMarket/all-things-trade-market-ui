@@ -8,5 +8,5 @@ import { ApiResponse } from '../../shared/model/shared.types';
   providedIn: 'root'
 })
 export class HomePageDataService {
-  constructor(private apiService: ApiService) { }
+  // constructor(private apiService: ApiService) { }
 }

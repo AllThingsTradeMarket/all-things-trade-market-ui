@@ -14,7 +14,7 @@ type NavItem = {
 })
 export class NavComponent implements OnInit {
   icons = [faTruck, faHeart, faComments, faUser, faShoppingBasket];
-  routes = ['/deliveries', '/favourites', '/messages', '/my-account', '/basket'];
+  routes = ['/deliveries', '/favourites', '/messages', '/my-account/register', '/basket'];
   navItems: NavItem[] = [];
 
   constructor() { }

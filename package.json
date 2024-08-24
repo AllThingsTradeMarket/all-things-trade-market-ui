@@ -10,7 +10,11 @@
     "add-route": "scripts/add-route/add-route.sh",
     "add-feature": "scripts/add-feature/add-feature.sh",
     "add-shell-module": "scripts/add-shell-module/add-shell-module.sh",
-    "add-ui-c": "scripts/add-ui-component/add-ui-component.sh"
+    "add-ui-c": "scripts/add-ui-component/add-ui-component.sh",
+    "add-route-win": "scripts/add-route/add-route.bat",
+    "add-feature-win": "scripts/add-feature/add-feature.bat",
+    "add-shell-module-win": "scripts\\add-shell-module\\add-shell-module.bat",
+    "add-ui-c-win": "call .\\scripts\\add-ui-component\\add-ui-component.bat"
   },
   "private": true,
   "dependencies": {

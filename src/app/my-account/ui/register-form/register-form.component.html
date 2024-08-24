@@ -1,0 +1,19 @@
+<main class="form-wrapper">
+    <tm-container class="form-container">
+        <h2>Create an account</h2>
+        <form class="register-form" [formGroup]="userForm" (ngSubmit)="onSubmit()">
+            <input class="form-control" id="firstName" formControlName="firstName" placeholder="First Name" />
+            <input class="form-control" id="lastName" formControlName="lastName" placeholder="Last Name" />
+            <input class="form-control" id="email" formControlName="email" placeholder="Email" />
+            <input class="form-control" id="username" formControlName="username" placeholder="Username" />
+            <input class="form-control" id="password" type="password" formControlName="password" placeholder="Password" />
+            <input class="form-control" id="repeatPassword" type="password" formControlName="repeatPassword"
+                placeholder="Repeat Password" />
+            <tm-button [disabled]="!userForm.valid" text="Register" class="submit-btn"></tm-button>
+        </form>
+
+        <div *ngIf="userForm.invalid && (userForm.touched || userForm.dirty)">
+            <p>Please fill in all fields correctly.</p>
+        </div>
+    </tm-container>
+</main>
