@@ -4,7 +4,7 @@
 .form-wrapper {
     @include centered-hor();
     .form-container {
-        width: 50%;
+        width: max(40%, 350px);
     
         .register-form {
             width: 100%;
@@ -15,6 +15,12 @@
                 font-size: $fs-slightly-bigger;
                 background-color: transparent;
                 padding: $padding-s $padding-m;
+            }
+        }
+
+        .sub-link {
+            &:hover {
+                text-decoration: underline;
             }
         }
     }

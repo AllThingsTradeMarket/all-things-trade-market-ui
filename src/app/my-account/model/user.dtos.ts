@@ -10,3 +10,8 @@ export type AuthUserDto = {
     email: string;
     password: string;
 };
+
+export type AuthenticatedUserDto = {
+    username: string;
+    id: number;
+}

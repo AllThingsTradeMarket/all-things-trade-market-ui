@@ -10,3 +10,12 @@
     width: 100%;
     @include simple-transition(background-color, .3s, $main-color-light, $main-color-dark);
 }
+
+.btn-disabled {
+    background-color: $btn-disabled;
+
+    &:hover {
+        cursor: not-allowed;
+        background-color: $btn-disabled;
+    }
+}

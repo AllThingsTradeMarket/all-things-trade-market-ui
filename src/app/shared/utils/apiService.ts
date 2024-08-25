@@ -19,22 +19,22 @@ export class ApiService<T> {
         });
     }
 
-    post(endpoint: string, data: T, params: Object = {}): Observable<ApiResponse<T>> {
-        return this.http.post<ApiResponse<T>>(`${this.BASE_URL}/${endpoint}`, data, {
+    post<ReturnType = T>(endpoint: string, data: T, params: Object = {}): Observable<ApiResponse<ReturnType>> {
+        return this.http.post<ApiResponse<ReturnType>>(`${this.BASE_URL}/${endpoint}`, data, {
             ...params,
             headers: this.headers
         });
     }
 
-    put(endpoint: string, data: T, params: Object = {}): Observable<ApiResponse<T>> {
-        return this.http.put<ApiResponse<T>>(`${this.BASE_URL}/${endpoint}`, data, {
+    put(endpoint: string, data: T, params: Object = {}) {
+        return this.http.put<ApiResponse<{id: string}>>(`${this.BASE_URL}/${endpoint}`, data, {
             ...params,
             headers: this.headers
         });
     }
 
-    delete(endpoint: string, params: Object = {}): Observable<ApiResponse<T>> {
-        return this.http.delete<ApiResponse<T>>(`${this.BASE_URL}/${endpoint}`, {
+    delete(endpoint: string, params: Object = {}) {
+        return this.http.delete<ApiResponse<{id: string}>>(`${this.BASE_URL}/${endpoint}`, {
             ...params,
             headers: this.headers
         });

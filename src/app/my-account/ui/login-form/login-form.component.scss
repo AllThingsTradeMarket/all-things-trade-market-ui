@@ -1,1 +1,28 @@
- 
+@import '../../../../styles/tm-mixins.scss';
+@import '../../../../styles/tm-variables.scss';
+
+.form-wrapper {
+    min-height: 70vh;
+    @include centered-hor();
+    .form-container {
+        width: max(40%, 350px);
+    
+        .register-form {
+            width: 100%;
+            @include flex-layout();
+            .form-control {
+                color: white;
+                width: 100%;
+                font-size: $fs-slightly-bigger;
+                background-color: transparent;
+                padding: $padding-s $padding-m;
+            }
+        }
+
+        .sub-link {
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}

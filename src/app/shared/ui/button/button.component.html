@@ -1,5 +1,7 @@
 <button class="btn" [disabled]="disabled" (click)="btnOnClick()" [ngStyle]="{
     'font-size': fontSize
+}" [ngClass]="{
+    'btn-disabled': disabled
 }">
     {{ text }}
 </button>

@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { IconDefinition, faComments, faHeart, faUser } from '@fortawesome/free-regular-svg-icons';
-import { faShoppingBasket, faTruck } from '@fortawesome/free-solid-svg-icons';
+import { faShoppingBasket } from '@fortawesome/free-solid-svg-icons';
 
 type NavItem = {
-  route: string,
-  icon: IconDefinition
+  route: string;
+  icon: IconDefinition;
 };
 
 @Component({
@@ -13,8 +13,8 @@ type NavItem = {
   styleUrls: ['./nav.component.scss']
 })
 export class NavComponent implements OnInit {
-  icons = [faTruck, faHeart, faComments, faUser, faShoppingBasket];
-  routes = ['/deliveries', '/favourites', '/messages', '/my-account/register', '/basket'];
+  icons = [faHeart, faComments, faUser, faShoppingBasket];
+  routes = ['/favourites', '/messages', '/my-account/register', '/basket'];
   navItems: NavItem[] = [];
 
   constructor() { }
@@ -29,7 +29,7 @@ export class NavComponent implements OnInit {
         route: route,
         icon: this.icons[i]
       });
-    })
+    });
   }
 
 }
