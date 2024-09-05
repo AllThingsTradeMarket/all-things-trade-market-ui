@@ -44,7 +44,7 @@
 }
 
 @mixin basic-box-shadow($width, $opacity) {
-    box-shadow: 0 0 $width rgba(black, $opacity);
+    box-shadow: 0 0 $width rgba(white, $opacity);
 }
 
 @mixin simple-transition($property, $time: .3s, $before-transition-value, $after-transition-value, $cursor: pointer) {

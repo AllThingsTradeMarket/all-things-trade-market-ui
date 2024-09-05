@@ -1,0 +1,21 @@
+<div class="dropdown-nav-item" (click)="toggleDisplayDropdown()">
+    <div class="icon-wrapper">
+        <fa-icon [icon]="config.icon"></fa-icon>
+    </div>
+    <ul *ngIf="displayDropdown" class="sub-nav">
+        <ng-container  *ngFor="let subNavItem of config.subNavItems">
+            <li class="sub-nav-item"  *ngIf="subNavItem.displayItem">
+                <ng-container *ngIf="!isButton(subNavItem)">
+                    <a [routerLink]="[config.routePrefix + '/' + castToLink(subNavItem).route]" routerLinkActive="router-link-active"  class="sub-nav-link">
+                        {{ subNavItem.text }}
+                    </a>
+                </ng-container>
+                <ng-container *ngIf="isButton(subNavItem)">
+                    <span class="sub-nav-link" (click)="castToButton(subNavItem).onClick()">
+                        {{ subNavItem.text }}
+                    </span>
+                </ng-container>
+            </li>
+        </ng-container>
+    </ul>
+</div>

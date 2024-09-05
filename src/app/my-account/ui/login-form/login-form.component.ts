@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from '../../utils/auth.service';
+import { CURRENT_USER_LOCAL_STORAGE_KEY } from '../../../shared/constants/constants';
 
 @Component({
    selector: 'tm-login-form',
@@ -18,7 +19,6 @@ export class LoginFormComponent {
 
    onSubmit() {
       if (this.userForm.valid) {
-         console.log('Form Data:', this.userForm.value);
          const createdUser = this.userForm.value;
          this.authService.signIn({
             email: createdUser.email!,
@@ -26,14 +26,15 @@ export class LoginFormComponent {
          }).subscribe((response) => {
             try {
                const user = response.data;
-               localStorage.setItem('currentUser', JSON.stringify(user));
+               localStorage.setItem(CURRENT_USER_LOCAL_STORAGE_KEY, JSON.stringify(user));
+               this.authService.setIsLogged(true);
                this.router.navigate(['/']);
             } catch (error) {
                console.error(`error occured: ${error}`);
             }
          });
       } else {
-         console.log('Form is invalid');
+         console.error('Form is invalid');
       }
    }
 } 

@@ -6,6 +6,7 @@ $main-color-light: #fd5611;
 $container-dark-color: #333;
 $page-bg: black;
 $btn-disabled: #7e2d0a;
+$link-hover-color: #2ab9a3;
 
 // fonts
 $open-sans: "Open Sans", sans-serif;
@@ -19,16 +20,16 @@ $max-content-width: 1400px;
 $content-width: min(100%, $max-content-width);
 
 // font-sizes
-$fs-tiny: .7em;
-$fs-smaller: .8em;
-$fs-small: .9em;
-$fs-normal: 1em;
-$fs-slightly-bigger: 1.1em;
-$fs-big: 1.25em;
-$fs-bigger: 1.5em;
-$fs-large: 1.75em;
-$fs-huge: 2em;
-$fs-biggest: 3em;
+$fs-tiny: 10px;
+$fs-smaller: 12px;
+$fs-small: 14px;
+$fs-normal: 16px;
+$fs-slightly-bigger: 18px;
+$fs-big: 20px;
+$fs-bigger: 24px;
+$fs-large: 28px;
+$fs-huge: 32px;
+$fs-biggest: 48px;
 
 // paddings
 $padding-s: .25em;
