@@ -1,0 +1,18 @@
+<div class="offer-tile">
+    <section class="image-section">
+        <img [src]="getImagePath()" class="image" alt="">
+    </section>
+    <section class="data-section">
+        <h2 class="offer-title">
+            {{offer.title}}
+        </h2>
+        <span class="date-created">
+            <fa-icon [icon]="calendarIcon"></fa-icon> 
+            {{offer.dateCreated}}
+        </span>
+    </section>
+    <section class="actions-section">
+        <tm-button text="Edit" [isAlt]="true"></tm-button>
+        <tm-button text="Delete" [isAlt]="true"></tm-button>
+    </section>
+</div> 

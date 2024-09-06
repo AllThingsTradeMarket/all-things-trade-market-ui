@@ -8,6 +8,7 @@ import { FooterModule } from './shared/ui/footer/footer.module';
 import { NavModule } from './shared/ui/nav/nav.module';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { HttpClientModule } from '@angular/common/http';
+import { LoaderModule } from './shared/ui/loader/loader.module';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { HttpClientModule } from '@angular/common/http';
     FooterModule,
     NavModule,
     FontAwesomeModule,
-    HttpClientModule
+    HttpClientModule,
+    LoaderModule
   ],
   providers: [],
   bootstrap: [AppComponent]

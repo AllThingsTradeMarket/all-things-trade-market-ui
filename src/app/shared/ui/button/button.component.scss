@@ -8,7 +8,19 @@
     color: white;
     padding: math.div($default-padding, 2) $default-padding;
     width: 100%;
+}
+
+.btn-primary {
     @include simple-transition(background-color, .3s, $main-color-light, $main-color-dark);
+}
+
+.btn-alt {
+    @extend .btn;
+    border: 1px solid $main-color-light;
+    background-color: transparent;
+    color: white;
+    
+    @include simple-transition(box-shadow, .3s, none, 0 0 .2rem rgba(white, .3));
 }
 
 .btn-disabled {

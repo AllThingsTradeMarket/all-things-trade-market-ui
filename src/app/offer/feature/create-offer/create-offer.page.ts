@@ -5,6 +5,8 @@ import { OfferDataService } from '../../data-access/offer-data.service';
 import { ImageContainerConfig } from '../../model/offer-module-types';
 import { isNil } from 'lodash';
 import { AuthService } from '../../../my-account/utils/auth.service';
+import { Router } from '@angular/router';
+import { LoadingService } from '../../../shared/utils/loadingService';
 
 @Component({
   selector: 'tm-create-offer',
@@ -30,7 +32,7 @@ export class CreateOfferPage implements OnInit {
 
   @ViewChild('fileInput') fileInput: any;
 
-  constructor(private offerDataService: OfferDataService, private authService: AuthService) { }
+  constructor(private offerDataService: OfferDataService, private authService: AuthService, private router: Router, private loadingService: LoadingService) { }
 
   ngOnInit() {
     this.initImageFieldsConfig();
@@ -48,9 +50,17 @@ export class CreateOfferPage implements OnInit {
     this.formData.images.forEach(image => {
       formData.append('images', image, image.name);
     });
-    
+
+    this.loadingService.setIsLoading(true);
     this.offerDataService.createOffer(formData).subscribe(response => {
       console.log(response);
+      if (response.id) {
+        this.loadingService.setIsLoading(false);
+        this.router.navigate(['offers/my-offers']);
+      }
+    }, (error) => {
+        console.error(error);
+        this.loadingService.setIsLoading(false);
     });
     
   }

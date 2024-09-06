@@ -1,4 +1,6 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { OfferDataService } from '../../data-access/offer-data.service';
+import { Offer } from '../../../shared/model/offer.types';
 
 @Component({
   selector: 'tm-my-offers',
@@ -6,7 +8,12 @@ import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
   styleUrls: ['./my-offers.page.scss']
 })
 export class MyOffersPage implements OnInit {
-    constructor() {}
+  userOffers!: Offer[];
+  constructor(private offerDataService: OfferDataService) { }
 
-    ngOnInit() {}
+  ngOnInit() {
+    this.offerDataService.getUserOffers().subscribe(offers => {
+      this.userOffers = offers;
+    });
+  }
 }
