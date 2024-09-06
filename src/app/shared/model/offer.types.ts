@@ -3,5 +3,6 @@ export type Offer = {
     userId: string,
     title: string,
     description: string,
-    dateCreated: Date
+    dateCreated: Date;
+    images: string[]
 };

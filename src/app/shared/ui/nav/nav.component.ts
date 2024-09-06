@@ -62,6 +62,13 @@ export class NavComponent implements OnInit {
               noPrefix: true
             },
             {
+              text: 'Your Offers',
+              displayItem: this.isLogged,
+              type: navItemTypes.LINK,
+              route: 'offers/my-offers',
+              noPrefix: true
+            },
+            {
               text: 'Logout',
               displayItem: this.isLogged,
               type: navItemTypes.BUTTON,

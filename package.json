@@ -11,10 +11,10 @@
     "add-feature": "scripts/add-feature/add-feature.sh",
     "add-shell-module": "scripts/add-shell-module/add-shell-module.sh",
     "add-ui-c": "scripts/add-ui-component/add-ui-component.sh",
-    "add-route-win": "scripts/add-route/add-route.bat",
-    "add-feature-win": "scripts/add-feature/add-feature.bat",
-    "add-shell-module-win": "scripts\\add-shell-module\\add-shell-module.bat",
-    "add-ui-c-win": "call .\\scripts\\add-ui-component\\add-ui-component.bat"
+    "add-route-win": "node scripts\\add-route\\add-route.js",
+    "add-feature-win": "node scripts\\add-feature\\add-feature.js",
+    "add-shell-module-win": "node scripts\\add-shell-module\\add-shell-module.js",
+    "add-ui-c-win": "node scripts\\add-ui-component\\add-ui-component.js"
   },
   "private": true,
   "dependencies": {

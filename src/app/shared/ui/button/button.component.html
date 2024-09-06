@@ -1,7 +1,14 @@
-<button class="btn" [disabled]="disabled" (click)="btnOnClick()" [ngStyle]="{
-    'font-size': fontSize
-}" [ngClass]="{
-    'btn-disabled': disabled
-}">
+<button 
+    class="btn" 
+    [disabled]="disabled" 
+    (click)="btnOnClick()" 
+    [ngStyle]="{
+        'font-size': fontSize
+    }" 
+    [ngClass]="{
+        'btn-disabled': disabled,
+        'btn-alt': isAlt,
+        'btn-primary': !isAlt
+    }">
     {{ text }}
 </button>

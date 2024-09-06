@@ -11,12 +11,16 @@ import { HttpHeaders } from '@angular/common/http';
   providedIn: 'root'
 })
 export class OfferDataService {
-  private readonly endpoint = 'offers'
+  private readonly endpoint = 'offers';
 
   constructor(private offerApiService: ApiService<Offer>, private authService: AuthService) { }
 
   createOffer(offer: FormData): Observable<IdResponse> {
     offer.append('userId', this.authService.getCurrentUserId());
     return this.offerApiService.post<IdResponse, FormData>(this.endpoint, offer, undefined, new HttpHeaders());
+  }
+
+  getUserOffers(): Observable<Offer[]> {
+    return this.offerApiService.get<Offer[]>(`${this.endpoint}/user/${this.authService.getCurrentUserId()}`);
   }
 }

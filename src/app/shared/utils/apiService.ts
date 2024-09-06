@@ -2,18 +2,19 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { IdResponse } from '../model/shared.types';
+import { DEV_API_BASE_URL } from '../constants/constants';
 
 @Injectable({
     providedIn: 'root'
 })
 export class ApiService<T> {
-    private readonly BASE_URL = 'http://localhost:3000/api';
+    private readonly BASE_URL = DEV_API_BASE_URL;
     readonly headers = new HttpHeaders({ 'Content-Type': 'application/json'});
 
     constructor(private http: HttpClient) { }
 
-    get(endpoint: string, params: Object = {}): Observable<T> {
-        return this.http.get<T>(`${this.BASE_URL}/${endpoint}`, {
+    get<ReturnType = T>(endpoint: string, params: Object = {}): Observable<ReturnType> {
+        return this.http.get<ReturnType>(`${this.BASE_URL}/${endpoint}`, {
             ...params,
             headers: this.headers
         });
