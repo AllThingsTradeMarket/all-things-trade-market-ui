@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { ApiResponse } from '../model/shared.types';
 
 @Injectable({
     providedIn: 'root'
@@ -12,29 +11,29 @@ export class ApiService<T> {
 
     constructor(private http: HttpClient) { }
 
-    get(endpoint: string, params: Object = {}): Observable<ApiResponse<T>> {
-        return this.http.get<ApiResponse<T>>(`${this.BASE_URL}/${endpoint}`, {
+    get(endpoint: string, params: Object = {}): Observable<T> {
+        return this.http.get<T>(`${this.BASE_URL}/${endpoint}`, {
             ...params,
             headers: this.headers
         });
     }
 
-    post<ReturnType = T>(endpoint: string, data: T, params: Object = {}): Observable<ApiResponse<ReturnType>> {
-        return this.http.post<ApiResponse<ReturnType>>(`${this.BASE_URL}/${endpoint}`, data, {
+    post<ReturnType = T>(endpoint: string, data: T, params: Object = {}): Observable<ReturnType> {
+        return this.http.post<ReturnType>(`${this.BASE_URL}/${endpoint}`, data, {
             ...params,
             headers: this.headers
         });
     }
 
     put(endpoint: string, data: T, params: Object = {}) {
-        return this.http.put<ApiResponse<{id: string}>>(`${this.BASE_URL}/${endpoint}`, data, {
+        return this.http.put<{id: string}>(`${this.BASE_URL}/${endpoint}`, data, {
             ...params,
             headers: this.headers
         });
     }
 
     delete(endpoint: string, params: Object = {}) {
-        return this.http.delete<ApiResponse<{id: string}>>(`${this.BASE_URL}/${endpoint}`, {
+        return this.http.delete<{id: string}>(`${this.BASE_URL}/${endpoint}`, {
             ...params,
             headers: this.headers
         });

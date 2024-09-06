@@ -33,7 +33,7 @@ export class RegisterFormComponent {
         firstName: createdUser.firstName!,
         lastName: createdUser.lastName!
       }).subscribe(response => {
-        console.log(response.data);
+        console.log(response);
       });
     } else {
       console.log('Form is invalid');

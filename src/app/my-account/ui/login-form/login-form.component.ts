@@ -25,7 +25,7 @@ export class LoginFormComponent {
             password: createdUser.password!,
          }).subscribe((response) => {
             try {
-               const user = response.data;
+               const user = response;
                localStorage.setItem(CURRENT_USER_LOCAL_STORAGE_KEY, JSON.stringify(user));
                this.authService.setIsLogged(true);
                this.router.navigate(['/']);

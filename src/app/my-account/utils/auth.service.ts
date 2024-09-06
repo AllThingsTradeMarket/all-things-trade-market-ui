@@ -2,7 +2,6 @@ import { Injectable } from "@angular/core";
 import { AuthUserDto, AuthenticatedUserDto, CreateUserDto } from "../model/user.dtos";
 import { ApiService } from "../../shared/utils/apiService";
 import { Observable, BehaviorSubject } from "rxjs";
-import { ApiResponse } from "../../shared/model/shared.types";
 import { CURRENT_USER_LOCAL_STORAGE_KEY } from "../../shared/constants/constants";
 import { Router } from "@angular/router";
 import { isNil } from "lodash";
@@ -24,7 +23,7 @@ export class AuthService {
         return this.apiRegisterService.post(this.registerEndpoint, user);
     }
 
-    signIn(user: AuthUserDto): Observable<ApiResponse<AuthenticatedUserDto>> {
+    signIn(user: AuthUserDto): Observable<AuthenticatedUserDto> {
         return this.apiLoginService.post<AuthenticatedUserDto>(this.loginEndpoint, user);
     }
 
