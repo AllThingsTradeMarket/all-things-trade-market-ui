@@ -2,23 +2,23 @@ import { IconDefinition } from "@fortawesome/free-regular-svg-icons";
 
 export type NavItemType = 'button' | 'link';
 
-type BaseSubnavItemConfig = {
+type BaseSubNavItemConfig = {
     text: string;
     displayItem?: boolean;
 };
 
-export type ButtonSubnavItemConfig = BaseSubnavItemConfig & {
+export type ButtonSubNavItemConfig = BaseSubNavItemConfig & {
     type: 'button';
-    onClick: () => void;  // `onClick` is required when `type` is 'button'
+    onClick: () => void;
 };
 
-export type LinkSubnavItemConfig = BaseSubnavItemConfig & {
+export type LinkSubNavItemConfig = BaseSubNavItemConfig & {
     type: 'link';
     route: string;
+    noPrefix?: boolean;
 };
 
-// Union type for SubnavItemConfig
-export type SubnavItemConfig = ButtonSubnavItemConfig | LinkSubnavItemConfig;
+export type SubNavItemConfig = ButtonSubNavItemConfig | LinkSubNavItemConfig;
 
 export type NavConfig = {
     items: (NavDropdownItemConfig | NavItemConfig)[];
@@ -32,5 +32,5 @@ export type NavItemConfig = {
 export type NavDropdownItemConfig = {
     routePrefix: string;
     icon: IconDefinition;
-    subNavItems: SubnavItemConfig[];
+    subNavItems: SubNavItemConfig[];
 }

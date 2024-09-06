@@ -6,7 +6,7 @@
         <ng-container  *ngFor="let subNavItem of config.subNavItems">
             <li class="sub-nav-item"  *ngIf="subNavItem.displayItem">
                 <ng-container *ngIf="!isButton(subNavItem)">
-                    <a [routerLink]="[config.routePrefix + '/' + castToLink(subNavItem).route]" routerLinkActive="router-link-active"  class="sub-nav-link">
+                    <a [routerLink]="[getItemRoute(subNavItem)]" routerLinkActive="router-link-active"  class="sub-nav-link">
                         {{ subNavItem.text }}
                     </a>
                 </ng-container>

@@ -1,0 +1,56 @@
+@import '../../../../styles/tm-mixins.scss';
+@import '../../../../styles/tm-variables.scss';
+
+.create-offer-content {
+    .create-offer-form {
+        @include flex-layout();
+
+        .form-input {
+            @include form-input($fs-big);
+        }
+
+        .form-container {
+            @include flex-layout();
+            @include container();
+            .section-title {
+                margin: 0 0 2px 0;
+            }
+
+            .section-sub-title {
+                font-size: $fs-small;
+                color: $sub-text-color;
+            }
+        }
+
+        .header-section {
+            @include flex-layout($gap: 2px);
+        }
+
+        .images-container {
+            $image-rect-size: 150px;
+            .images {
+                display: grid;
+                gap: $default-gap;
+                grid-template-columns: repeat(3, $image-rect-size);
+            }
+        }
+
+        .title-container {
+        }
+
+        .description-container {
+            .description-input {
+                font-size: $fs-normal;
+                color: white;
+            }
+        }
+
+        .submit-section {
+            @include flex-layout(row-reverse, center);
+            .create-btn {
+                font-size: $fs-big;
+                font-weight: bold;
+            }
+        }
+    }
+}

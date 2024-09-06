@@ -1,0 +1,45 @@
+<main class="create-offer-content">
+    <h1>
+        Create offer
+    </h1>
+    <form class="create-offer-form" (submit)="createOffer()" enctype='multipart/form-data'>
+        <section class="form-container images-container">
+            <section class="header-section">
+                <h2 class="section-title">Images</h2>
+                <span class="section-sub-title">Remember that the first pictuare will be the main one</span>
+                <span class="section-sub-title">Max 5 images. Valid extensions: 'png', 'jpg', 'jpeg'</span>
+            </section>
+
+            <div class="images">
+                <tm-image-input-container 
+                    *ngFor="let index of imageFieldsIndexes" 
+                    (click)="openFileDialog()" 
+                    [config]="imageFieldsConfig.configs[index]">
+                </tm-image-input-container>
+            </div>
+            <input type="file" hidden name="images" #fileInput (change)="onImageSelected($event)" multiple="false">
+        </section>
+        <section class="form-container title-container">
+            <section class="header-section">
+                <h2 class="section-title">Title</h2>
+                <span class="section-sub-title">Make it as descriptive as possible</span>
+            </section>
+            <input placeholder="Ex. iPhone 15 black 256 GB" type="text" [(ngModel)]="formData.title" class="form-input title-input" name="title">
+        </section>
+        <section class="form-container description-container">
+            <section class="header-section">
+                <h2 class="section-title">Description</h2>
+                <span class="section-sub-title">Write more details about your product</span>
+                <textarea
+                    name="description" 
+                    id="description"
+                    class="form-input description-input"
+                    placeholder="Tell us about your product"
+                    [(ngModel)]="formData.description"></textarea>
+            </section>
+        </section>
+        <section class="form-container submit-section">
+            <tm-button class="create-btn" text="Create Offer"></tm-button>
+        </section>
+    </form>
+</main>
