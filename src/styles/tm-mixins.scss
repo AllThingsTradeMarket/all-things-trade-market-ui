@@ -16,6 +16,7 @@
     @include container($bg, 0, $padding);
     display: grid;
     justify-items: center;
+
     .content-wrapper {
         width: $content-width;
     }
@@ -43,6 +44,21 @@
     }
 }
 
+@mixin rect($sizeX, $sizeY, $bg) {
+    width: $sizeX;
+    height: $sizeY;
+    background-color: $bg;
+}
+
+@mixin square($size, $bg) {
+    @include rect($size, $size, $bg);
+}
+
+@mixin circle($size, $bg) {
+    @include square($size, $bg);
+    border-radius: 50%;
+}
+
 @mixin basic-box-shadow($width, $opacity) {
     box-shadow: 0 0 $width rgba(white, $opacity);
 }
@@ -67,4 +83,12 @@
     align-items: $align-items;
     justify-content: $justify-content;
     gap: $gap;
+}
+
+@mixin form-input($fontSize: $fs-normal) {
+    background-color: transparent;
+    color: white;
+    padding: $padding-m $padding-l;
+    border: 1px solid $sub-text-color;
+    font-size: $fontSize;
 }

@@ -1,0 +1,17 @@
+@import '../../../../styles/tm-mixins.scss';
+@import '../../../../styles/tm-variables.scss';
+
+$image-rect-size: 150px;
+.image-container {
+    @include square($image-rect-size, rgb(49, 46, 46));
+    @include centered();
+    @include basic-box-shadow(.2rem, .3);
+    &:hover {
+        cursor: pointer;
+    } 
+
+    .image {
+        width: 100%;
+        @include square($image-rect-size, transparent);
+    }
+}

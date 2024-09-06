@@ -1,0 +1,5 @@
+ 
+<div class="image-container">
+    <fa-icon *ngIf="!config.imageFile" class="camera-icon" [icon]="cameraIcon"></fa-icon>
+    <img *ngIf="imgSrc" [src]="imgSrc" alt="" class="image">
+</div>

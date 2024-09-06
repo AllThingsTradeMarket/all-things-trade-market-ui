@@ -5,12 +5,17 @@ const routes: Routes = [
   {
     path: '',
     loadChildren: () =>
-      import('./home/feature/home/home.module').then(m => m.HomePageModule),
+      import('./home/feature/home/home.module').then(m => m.HomePageModule)
   },
   {
     path: 'my-account',
     loadChildren: () =>
-      import('./my-account/feature/my-account-shell/my-account-shell.module').then(m => m.MyAccountShellModule),
+      import('./my-account/feature/my-account-shell/my-account-shell.module').then(m => m.MyAccountShellModule)
+  },
+  {
+    path: 'offers',
+    loadChildren: () =>
+      import('./offer/feature/offer-shell/offer-shell.module').then(m => m.OfferShellModule),
   }
 ];
 
