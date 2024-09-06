@@ -2,6 +2,7 @@
 @import "../../../../styles/tm-variables.scss";
 
 .dropdown-nav-item {
+    max-width: 200px;
     position: relative;
     @include centered();
     &:hover {
@@ -9,14 +10,15 @@
     }
 
     .sub-nav {
+        width: 200px;
         list-style-type: none;
         background-color: $container-dark-color;
         position: absolute;
         border: 1px grey solid;
         top: 2rem;
-        left: 0;
+        right: 0;
         .sub-nav-item {
-            font-size: $fs-normal;
+            font-size: $fs-small;
             padding: $padding-m $padding-l;
             &:hover {
                 @include simple-transition(color, .2s, inherit, $link-hover-color);

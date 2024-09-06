@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core'; 
 import { IconDefinition } from '@fortawesome/free-regular-svg-icons';
-import { ButtonSubnavItemConfig, LinkSubnavItemConfig, NavDropdownItemConfig, SubnavItemConfig } from '../nav/nav.types';
+import { ButtonSubNavItemConfig, LinkSubNavItemConfig, NavDropdownItemConfig, SubNavItemConfig } from '../nav/nav.types';
 import { navItemTypes } from '../../constants/constants';
  
 @Component({ 
@@ -16,10 +16,15 @@ export class NavDropdowniIemComponent {
       this.displayDropdown = !this.displayDropdown;
    }
 
-   isButton(subNavItem: SubnavItemConfig) {
+   isButton(subNavItem: SubNavItemConfig) {
       return subNavItem.type === navItemTypes.BUTTON;
    }
 
-   castToButton = (subNabItem: SubnavItemConfig) => subNabItem as ButtonSubnavItemConfig;
-   castToLink = (subNabItem: SubnavItemConfig) => subNabItem as LinkSubnavItemConfig;
+   castToButton = (subNabItem: SubNavItemConfig) => subNabItem as ButtonSubNavItemConfig;
+   castToLink = (subNabItem: SubNavItemConfig) => subNabItem as LinkSubNavItemConfig;
+
+   getItemRoute(subNavItem: SubNavItemConfig) {
+      const itemAsLink = this.castToLink(subNavItem)
+      return itemAsLink.noPrefix ? itemAsLink.route : this.config.routePrefix + '/' + itemAsLink.route;
+   }
 }
