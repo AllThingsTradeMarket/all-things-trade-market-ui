@@ -2,7 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { faCamera } from '@fortawesome/free-solid-svg-icons';
 import { CreateOfferDto } from '../../dtos/offer.dtos';
 import { OfferDataService } from '../../data-access/offer-data.service';
-import { ImageContainerConfig } from '../../model/offer-module-types';
+import { ImageContainerConfig } from '../../model/offer.types'; 
 import { isNil } from 'lodash';
 import { AuthService } from '../../../my-account/utils/auth.service';
 import { Router } from '@angular/router';
@@ -19,6 +19,7 @@ export class CreateOfferPage implements OnInit {
   formData: CreateOfferDto = {
     userId: '',
     title: '',
+    price: 1,
     description: '',
     images: []
   };
@@ -42,6 +43,7 @@ export class CreateOfferPage implements OnInit {
     const formData = new FormData();
     formData.append('description', this.formData.description);
     formData.append('title', this.formData.title);
+    formData.append('price', this.formData.price.toString());
 
     this.formData.images = this.imageFieldsConfig.configs
       .map(config => config.imageFile!)

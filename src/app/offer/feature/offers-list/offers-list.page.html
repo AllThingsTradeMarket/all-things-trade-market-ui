@@ -1,0 +1,6 @@
+<ng-container *ngIf="offers">
+    <h1>Found offers: {{ offers.length }}</h1>
+    <div class="offers-container">
+        <tm-offers-list [offers]="offers"></tm-offers-list>
+    </div>
+</ng-container>
