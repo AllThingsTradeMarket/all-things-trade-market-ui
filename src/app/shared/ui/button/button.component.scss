@@ -20,7 +20,7 @@
     background-color: transparent;
     color: white;
     
-    @include simple-transition(box-shadow, .3s, none, 0 0 .2rem rgba(white, .3));
+    @include simple-transition(box-shadow, .3s, none, 0 0 .4rem rgba(white, .3));
 }
 
 .btn-disabled {

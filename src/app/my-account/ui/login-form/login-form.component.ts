@@ -3,6 +3,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from '../../utils/auth.service';
 import { CURRENT_USER_LOCAL_STORAGE_KEY } from '../../../shared/constants/constants';
+import { LoadingService } from '../../../shared/utils/loadingService';
 
 @Component({
    selector: 'tm-login-form',
@@ -15,11 +16,12 @@ export class LoginFormComponent {
       password: new FormControl('', Validators.required)
    });
 
-   constructor(private authService: AuthService, private router: Router) { };
+   constructor(private authService: AuthService, private router: Router, private loadingService: LoadingService) { };
 
    onSubmit() {
       if (this.userForm.valid) {
          const createdUser = this.userForm.value;
+         this.loadingService.setIsLoading(true);
          this.authService.signIn({
             email: createdUser.email!,
             password: createdUser.password!,
@@ -28,6 +30,7 @@ export class LoginFormComponent {
                const user = response;
                localStorage.setItem(CURRENT_USER_LOCAL_STORAGE_KEY, JSON.stringify(user));
                this.authService.setIsLogged(true);
+               this.loadingService.setIsLoading(false);
                this.router.navigate(['/']);
             } catch (error) {
                console.error(`error occured: ${error}`);

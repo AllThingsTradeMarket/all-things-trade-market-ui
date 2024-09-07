@@ -4,6 +4,7 @@
 .page-content-wrapper {
     @include flex-layout();
     .app-content {
+        min-height: 80vh;
         @include full-screen-container(black);
     }
 }

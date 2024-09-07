@@ -2,6 +2,8 @@ import { Component, Input } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { passwordMatchValidator } from '../../utils/userValidation';
 import { AuthService } from '../../utils/auth.service';
+import { LoadingService } from '../../../shared/utils/loadingService';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'tm-register-form',
@@ -20,23 +22,24 @@ export class RegisterFormComponent {
     validators: passwordMatchValidator('password', 'repeatPassword')
   });
 
-  constructor(private authService: AuthService) { };
+  constructor(private authService: AuthService, private loadingService: LoadingService, private router: Router) { };
 
   onSubmit() {
     if (this.userForm.valid) {
-      console.log('Form Data:', this.userForm.value);
       const createdUser = this.userForm.value;
+      this.loadingService.setIsLoading(true);
       this.authService.createUser({
         email: createdUser.email!,
         password: createdUser.password!,
         username: createdUser.username!,
         firstName: createdUser.firstName!,
         lastName: createdUser.lastName!
-      }).subscribe(response => {
-        console.log(response);
+      }).subscribe(() => {
+        this.loadingService.setIsLoading(false);
+        this.router.navigate(['my-account/login']);
       });
     } else {
-      console.log('Form is invalid');
+      console.error('Form is invalid');
     }
   }
 }

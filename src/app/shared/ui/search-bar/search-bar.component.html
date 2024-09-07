@@ -1,4 +1,9 @@
 <div class="content-wrapper">
-    <input class="search-bar" type="text" placeholder="What are you looking for?">
+    <input 
+        class="search-bar" 
+        [(ngModel)]="offerTitle"
+        name="offerTitle" 
+        type="text" 
+        placeholder="What are you looking for?">
     <tm-button class="search-button" text="Search" (onClick)="search()" fontSize="1.25em"></tm-button>
 </div>
