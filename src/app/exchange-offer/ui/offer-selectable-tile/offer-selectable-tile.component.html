@@ -1,0 +1,22 @@
+<div class="offer-selctable-tile">
+    <section class="image-section">
+        <img [src]="getOfferImagePath()" alt="Image not found" class="image">
+    </section>
+    <section class="data-section">
+        <h3 class="offer-title">
+            {{offer.title}}
+        </h3>
+        <span>
+            Buy now price: <b>{{offer.price}}$</b>
+        </span>
+        <span>
+            since: {{offer.dateCreated}}
+        </span>
+    </section>
+    <section class="selection-section">
+        <label [for]="offer.id + 'isSelected'" class="select-label">
+            Add this product to offer
+        </label>
+        <input type="checkbox" name="isSelected" [id]="offer.id + 'isSelected'" (change)="onSelectChange($event)">
+    </section>
+</div>

@@ -1,0 +1,11 @@
+<main>
+    <h1>Offer exchange</h1>
+    <section class="requested-product-section" *ngIf="requestedProduct">
+        <h3>Requested product</h3>
+        <tm-offer-tile [offer]="requestedProduct" [noActions]="true"></tm-offer-tile>
+    </section>
+    <section class="your-offer-section" *ngIf="userOffers">
+        <h3>Your offer</h3>
+        <tm-exchange-offer-creator (onSubmit)="submitExchangeOffer($event)" [userOffers]="userOffers"></tm-exchange-offer-creator>
+    </section>
+</main>

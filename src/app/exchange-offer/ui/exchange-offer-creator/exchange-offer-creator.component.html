@@ -1,0 +1,25 @@
+<div class="exchange-offer-creator">
+    <section class="user-product-selection">
+        <h4>Select the products that you want to add to the offer</h4>
+        <div class="user-product-tiles">
+            <tm-offer-selectable-tile *ngFor="let offer of userOffers" [offer]="offer" (selectOnChange)="onOfferSelectChange($event)"></tm-offer-selectable-tile>
+        </div>
+    </section>
+    <section class="money-section">
+        <label for="">Do you want to offer money?</label>
+        <div>
+            <input type="radio" id="yes" name="offerMoney" [(ngModel)]="showMoneyInput" [value]="true">
+            <label for="yes">Yes</label>
+            
+            <input type="radio" id="no" name="offerMoney" [(ngModel)]="showMoneyInput" [value]="false">
+            <label for="no">No</label>
+        </div>
+        <div *ngIf="showMoneyInput">
+            <input type="number" class="form-input" placeholder="Enter amount" [(ngModel)]="offeredCash"/>
+        </div>
+    </section>
+    <section class="submit-section">
+        <tm-button text="Cancel" (onClick)="cancel()" [isAlt]="true"></tm-button>
+        <tm-button text="Submit" (onClick)="submitOffer()"></tm-button>
+    </section>
+</div>

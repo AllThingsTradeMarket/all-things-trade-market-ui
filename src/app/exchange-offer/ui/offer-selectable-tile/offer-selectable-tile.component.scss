@@ -1,0 +1,32 @@
+@import '../../../../styles/tm-mixins.scss';
+@import '../../../../styles/tm-variables.scss';
+
+.offer-selctable-tile {
+    @include flex-layout($gap: 0);
+    @include container();
+    padding: 0;
+    width: 270px;
+    .image {
+        width: 100%;
+        aspect-ratio: 259/194;
+    }
+
+    .data-section {
+        padding: $padding-l;
+        padding-top: 0;
+        .offer-title {
+            margin-bottom: 0;
+        }
+        @include flex-layout($gap: .2rem);
+    }
+
+    .selection-section {
+        padding: $padding-l;
+        padding-top: 0;
+        .select-label {
+            &:hover {
+                cursor: pointer;
+            }
+        }
+    }
+}

@@ -1,0 +1,27 @@
+@import '../../../../styles/tm-mixins.scss';
+@import '../../../../styles/tm-variables.scss';
+
+.exchange-offer-creator {
+    @include flex-layout();
+
+    .user-product-selection {
+        .user-product-tiles {
+            @include flex-layout(row);
+        }
+    }
+
+    .money-section {
+        @include flex-layout($gap: .4rem);
+        @include container();
+
+        .form-input {
+            @include form-input($fs-normal);
+        }
+    }
+
+    .submit-section {
+        @include container();
+        @include flex-layout(row, center, space-between);
+        
+    }
+}
