@@ -52,17 +52,19 @@ export class CreateOfferPage implements OnInit {
     });
 
     this.loadingService.setIsLoading(true);
-    this.offerDataService.createOffer(formData).subscribe(response => {
-      console.log(response);
-      if (response.id) {
-        this.loadingService.setIsLoading(false);
-        this.router.navigate(['offers/my-offers']);
-      }
-    }, (error) => {
+    this.offerDataService.createOffer(formData).subscribe({
+      next: response => {
+        console.log(response);
+        if (response.id) {
+          this.loadingService.setIsLoading(false);
+          this.router.navigate(['offers/my-offers']);
+        }
+      },
+      error: error => {
         console.error(error);
         this.loadingService.setIsLoading(false);
+      }
     });
-    
   }
 
   openFileDialog() {

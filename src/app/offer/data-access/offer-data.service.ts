@@ -6,6 +6,7 @@ import { AuthService } from '../../my-account/utils/auth.service';
 import { Observable } from 'rxjs';
 import { IdResponse } from '../../shared/model/shared.types';
 import { HttpHeaders } from '@angular/common/http';
+import { OfferSearchParams } from '../model/offer-module-types';
 
 @Injectable({
   providedIn: 'root'
@@ -22,5 +23,9 @@ export class OfferDataService {
 
   getUserOffers(): Observable<Offer[]> {
     return this.offerApiService.get<Offer[]>(`${this.endpoint}/user/${this.authService.getCurrentUserId()}`);
+  }
+
+  getOffersByParameters(params: OfferSearchParams): Observable<Offer[]> {
+    return this.offerApiService.get<Offer[]>(this.endpoint, params);
   }
 }

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'tm-search-bar',
@@ -6,9 +7,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./search-bar.component.scss']
 })
 export class SearchBarComponent {
-  constructor() {};
+  offerTitle: string = '';
+  constructor(private router: Router, private route: ActivatedRoute) { };
 
   search() {
-    console.log('searching');
-  }
+    this.router.navigate(['/offers'], { queryParams: { title: this.offerTitle } });
+}
 }

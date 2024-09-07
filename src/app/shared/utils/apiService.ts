@@ -13,9 +13,9 @@ export class ApiService<T> {
 
     constructor(private http: HttpClient) { }
 
-    get<ReturnType = T>(endpoint: string, params: Object = {}): Observable<ReturnType> {
+    get<ReturnType = T>(endpoint: string, params: any = {}): Observable<ReturnType> {
         return this.http.get<ReturnType>(`${this.BASE_URL}/${endpoint}`, {
-            ...params,
+            params: params,
             headers: this.headers
         });
     }

@@ -5,6 +5,7 @@ import { Observable, BehaviorSubject } from "rxjs";
 import { CURRENT_USER_LOCAL_STORAGE_KEY } from "../../shared/constants/constants";
 import { Router } from "@angular/router";
 import { isNil } from "lodash";
+import { LoadingService } from "../../shared/utils/loadingService";
 
 @Injectable({
     providedIn: 'root'
@@ -14,7 +15,9 @@ export class AuthService {
     private readonly loginEndpoint = 'users/login';
     private isLoggedSubject: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(!isNil(localStorage.getItem(CURRENT_USER_LOCAL_STORAGE_KEY)));
 
-    constructor(private apiRegisterService: ApiService<CreateUserDto>, private apiLoginService: ApiService<AuthUserDto>,  private router: Router) {
+    constructor(private apiRegisterService: ApiService<CreateUserDto>, private apiLoginService: ApiService<AuthUserDto>,  private router: Router,
+        private loadingService: LoadingService
+    ) {
     };
 
     createUser(user: CreateUserDto) {
@@ -37,6 +40,7 @@ export class AuthService {
         localStorage.removeItem(CURRENT_USER_LOCAL_STORAGE_KEY);
         this.setIsLogged(false);
         this.router.navigate(['/']);
+        window.location.reload();
     }
 
     getCurrentUserId() {
