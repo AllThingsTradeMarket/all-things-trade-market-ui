@@ -24,7 +24,20 @@
                 <h2 class="section-title">Title</h2>
                 <span class="section-sub-title">Make it as descriptive as possible</span>
             </section>
-            <input placeholder="Ex. iPhone 15 black 256 GB" type="text" [(ngModel)]="formData.title" class="form-input title-input" name="title">
+            <input 
+                placeholder="Ex. iPhone 15 black 256 GB" 
+                type="text" 
+                [(ngModel)]="formData.title" 
+                class="form-input title-input" 
+                name="title"
+                required="true">
+        </section>
+        <section class="form-container price-container">
+            <section class="header-section">
+                <h2 class="section-title">Buy now price</h2>
+                <span class="section-sub-title">If someone will offer you this price. He will buy this product immediately</span>
+            </section>
+            <input type="number" min="1" [(ngModel)]="formData.price" class="form-input title-input" name="price" required="true">
         </section>
         <section class="form-container description-container">
             <section class="header-section">
@@ -35,6 +48,7 @@
                     id="description"
                     class="form-input description-input"
                     placeholder="Tell us about your product"
+                    required="true"
                     [(ngModel)]="formData.description"></textarea>
             </section>
         </section>

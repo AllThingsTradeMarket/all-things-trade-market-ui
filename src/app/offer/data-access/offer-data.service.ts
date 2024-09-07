@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
 import { ApiService } from '../../shared/utils/apiService';
-import { Offer } from '../../shared/model/offer.types';
+import { Offer } from '../model/offer.types';
 import { CreateOfferDto } from '../dtos/offer.dtos';
 import { AuthService } from '../../my-account/utils/auth.service';
 import { Observable } from 'rxjs';
 import { IdResponse } from '../../shared/model/shared.types';
 import { HttpHeaders } from '@angular/common/http';
-import { OfferSearchParams } from '../model/offer-module-types';
+import { OfferSearchParams } from '../model/offer.types';
 
 @Injectable({
   providedIn: 'root'

@@ -1,0 +1,28 @@
+ 
+@import '../../../../styles/tm-mixins.scss';
+@import '../../../../styles/tm-variables.scss';
+
+$img-width: 200px;
+.offer-tile {
+    @include container();
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    gap: $default-gap;
+    .image {
+        width: $img-width;
+        aspect-ratio: 5/4;
+    }
+
+    .data-section {
+        border-bottom: 1px solid $sub-text-color;
+        .date-created {
+            @include flex-layout(row);
+        }
+    }
+
+    .actions-section {
+        grid-column: 1/-1;
+        @include flex-layout(row-reverse);
+    }
+
+}
