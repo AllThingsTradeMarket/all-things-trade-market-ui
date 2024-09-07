@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Offer } from '../../model/offer.types';
+import { Offer } from '../../types/offer.types';
 
 @Component({
   selector: 'tm-offers-list',
@@ -8,4 +8,5 @@ import { Offer } from '../../model/offer.types';
 })
 export class OffersListComponent {
   @Input() offers!: Offer[];
+  @Input() isCurrentUserOffers!: boolean;
 }

@@ -2,7 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { faCamera } from '@fortawesome/free-solid-svg-icons';
 import { CreateOfferDto } from '../../dtos/offer.dtos';
 import { OfferDataService } from '../../data-access/offer-data.service';
-import { ImageContainerConfig } from '../../model/offer.types'; 
+import { ImageContainerConfig } from '../../types/offer.types'; 
 import { isNil } from 'lodash';
 import { AuthService } from '../../../my-account/utils/auth.service';
 import { Router } from '@angular/router';

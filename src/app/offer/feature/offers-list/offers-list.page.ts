@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { OfferDataService } from '../../data-access/offer-data.service';
-import { Offer } from '../../model/offer.types';
+import { Offer } from '../../types/offer.types';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
-import { OfferSearchParams } from '../../model/offer.types';
+import { OfferSearchParams } from '../../types/offer.types';
 import { LoadingService } from '../../../shared/utils/loadingService';
+import { AuthService } from '../../../my-account/utils/auth.service';
 
 @Component({
   selector: 'tm-offers-list-page',
@@ -13,7 +14,7 @@ import { LoadingService } from '../../../shared/utils/loadingService';
 export class OffersListPage implements OnInit {
   offers!: Offer[];
   constructor(private offerDataService: OfferDataService, private route: ActivatedRoute, 
-    private loadingService: LoadingService, private router: Router) { }
+    private loadingService: LoadingService, private router: Router, private authService: AuthService) { }
   
 
   ngOnInit() {
@@ -29,7 +30,7 @@ export class OffersListPage implements OnInit {
     this.loadingService.setIsLoading(true);
     this.offerDataService.getOffersByParameters(this.getParamsObject()).subscribe(offers => {
       this.loadingService.setIsLoading(false);
-      this.offers = offers;
+      this.offers = offers.filter(offer => offer.userId !== this.authService.getCurrentUserId());
     });
   }
 
@@ -43,7 +44,6 @@ export class OffersListPage implements OnInit {
     if(userId) {
       params.userId = userId;
     }
-    console.log(params);
     return params;
   }
 }

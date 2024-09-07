@@ -15,9 +15,7 @@ $img-width: 200px;
 
     .data-section {
         border-bottom: 1px solid $sub-text-color;
-        .date-created {
-            @include flex-layout(row);
-        }
+        @include flex-layout();
     }
 
     .actions-section {

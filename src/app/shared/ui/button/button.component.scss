@@ -4,7 +4,7 @@
 
 .btn {
     border-radius: $br-s;
-    border: none;
+    border: solid 1px transparent;
     color: white;
     padding: math.div($default-padding, 2) $default-padding;
     width: 100%;
@@ -16,7 +16,7 @@
 
 .btn-alt {
     @extend .btn;
-    border: 1px solid $main-color-light;
+    border-color: $main-color-light;
     background-color: transparent;
     color: white;
     

@@ -39,8 +39,7 @@ export class AuthService {
     logout() {
         localStorage.removeItem(CURRENT_USER_LOCAL_STORAGE_KEY);
         this.setIsLogged(false);
-        this.router.navigate(['/']);
-        window.location.reload();
+        window.location.href = '/';
     }
 
     getCurrentUserId() {

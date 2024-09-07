@@ -16,6 +16,11 @@ const routes: Routes = [
     path: 'offers',
     loadChildren: () =>
       import('./offer/feature/offer-shell/offer-shell.module').then(m => m.OfferShellModule),
+  },
+  {
+    path: 'exchange_offers',
+    loadChildren: () =>
+      import('./exchange-offer/feature/exchange-offer-shell/exchange-offer-shell.module').then(m => m.ExchangeOfferShellModule),
   }
 ];
 

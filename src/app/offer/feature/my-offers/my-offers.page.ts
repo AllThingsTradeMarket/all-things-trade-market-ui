@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { OfferDataService } from '../../data-access/offer-data.service';
-import { Offer } from '../../model/offer.types';
+import { Offer } from '../../types/offer.types';
 
 @Component({
   selector: 'tm-my-offers',

@@ -15,8 +15,12 @@
             since: {{offer.dateCreated}}
         </span>
     </section>
-    <section class="actions-section">
-        <tm-button text="Edit" [isAlt]="true"></tm-button>
-        <!-- <tm-button text="Delete" [isAlt]="true"></tm-button> -->
+    <section class="actions-section" *ngIf="!noActions">
+        <tm-button 
+            *ngFor="let action of actionsConfig" 
+            [text]="action.text" 
+            [isAlt]="action.isAlt"
+            (onClick)="action.onClick()">
+        </tm-button>
     </section>
 </div> 
