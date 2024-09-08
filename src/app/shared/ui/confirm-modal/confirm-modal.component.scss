@@ -1,0 +1,26 @@
+@import "../../../../styles/tm-mixins.scss";
+@import "../../../../styles/tm-variables.scss";
+
+.full-screen-wrapper {
+    width: 100vw;
+    height: 100vh;
+    @include centered();
+    background-color: rgba(black, .5);
+    padding: 0;
+    margin: 0;
+    z-index: 1000;
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    .modal {
+        @include container();
+        .modal-body {
+            @include centered();
+        }
+
+        .modal-footer {
+            @include flex-layout(row, center, space-between);
+        }
+    }
+}

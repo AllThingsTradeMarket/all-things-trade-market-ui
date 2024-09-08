@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
-import { ApiService } from '../../shared/utils/apiService';
+import { ApiService } from '../../shared/utils/api-service';
 import { Offer } from '../types/offer.types';
 import { CreateOfferDto } from '../dtos/offer.dtos';
 import { AuthService } from '../../my-account/utils/auth.service';
 import { Observable } from 'rxjs';
-import { IdResponse } from '../../shared/model/shared.types';
+import { IdResponse } from '../../shared/types/shared.types';
 import { HttpHeaders } from '@angular/common/http';
 import { OfferSearchParams } from '../types/offer.types';
 

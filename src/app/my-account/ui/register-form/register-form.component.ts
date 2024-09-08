@@ -2,7 +2,7 @@ import { Component, Input } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { passwordMatchValidator } from '../../utils/userValidation';
 import { AuthService } from '../../utils/auth.service';
-import { LoadingService } from '../../../shared/utils/loadingService';
+import { LoadingService } from '../../../shared/utils/loading-service';
 import { Router } from '@angular/router';
 
 @Component({

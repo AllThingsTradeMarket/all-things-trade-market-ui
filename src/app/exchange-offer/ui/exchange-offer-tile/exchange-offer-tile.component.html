@@ -7,5 +7,9 @@
         [exchangeOffer]="exchangeOffer"
         [sectionTtile]="tileConfig.title2">
     </tm-exchange-offer-tile-requested-product-section>
-    <tm-exchange-offer-tile-actions [currentStatus]="exchangeOffer.status" [isOfferToCurrentUser]="isOfferToCurrentUser"></tm-exchange-offer-tile-actions>
+    <tm-exchange-offer-tile-actions 
+        [currentStatus]="exchangeOffer.status" 
+        [isOfferToCurrentUser]="isOfferToCurrentUser"
+        [exchangeOfferId]="exchangeOffer.id">
+    </tm-exchange-offer-tile-actions>
 </div>

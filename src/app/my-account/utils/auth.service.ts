@@ -1,11 +1,11 @@
 import { Injectable } from "@angular/core";
 import { AuthUserDto, AuthenticatedUserDto, CreateUserDto, User, UserSearchParams } from "../types/user.types";
-import { ApiService } from "../../shared/utils/apiService";
+import { ApiService } from "../../shared/utils/api-service";
 import { Observable, BehaviorSubject } from "rxjs";
 import { CURRENT_USER_LOCAL_STORAGE_KEY } from "../../shared/constants/constants";
 import { Router } from "@angular/router";
 import { isNil } from "lodash";
-import { LoadingService } from "../../shared/utils/loadingService";
+import { LoadingService } from "../../shared/utils/loading-service";
 
 @Injectable({
     providedIn: 'root'

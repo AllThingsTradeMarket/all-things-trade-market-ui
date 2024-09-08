@@ -1,10 +1,10 @@
 import { Injectable } from "@angular/core";
-import { ApiService } from "../../shared/utils/apiService";
+import { ApiService } from "../../shared/utils/api-service";
 import { AuthService } from "../../my-account/utils/auth.service";
-import { ExchangeOffer, ExchangeOfferSearchParams } from "../types/exchange_offer.types";
+import { ExchangeOffer, ExchangeOfferSearchParams, ExchangeOfferStatus } from "../types/exchange_offer.types";
 import { Observable } from "rxjs";
-import { IdResponse } from "../../shared/model/shared.types";
-import { CreateExchangeOfferDto } from "../dtos/exchange_offer.dtos";
+import { IdResponse } from "../../shared/types/shared.types";
+import { CreateExchangeOfferDto, UpdateExchangeOfferStatusDto } from "../dtos/exchange_offer.dtos";
 
 @Injectable({
     providedIn: 'root'
@@ -20,5 +20,11 @@ export class ExchangeOfferDataService {
 
     getExchangeOffersByParameters(params: ExchangeOfferSearchParams): Observable<ExchangeOffer[]> {
         return this.exchangeOfferApiService.get<ExchangeOffer[]>(this.endpoint, params);
+    }
+
+    updateExchangeOfferStatus(id: number, exchangeOfferStatus: ExchangeOfferStatus) {
+        return this.exchangeOfferApiService.put<UpdateExchangeOfferStatusDto>(`${this.endpoint}/${id}`, {
+            status: exchangeOfferStatus
+        });
     }
 };

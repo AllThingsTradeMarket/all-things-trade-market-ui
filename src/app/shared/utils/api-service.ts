@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { IdResponse } from '../model/shared.types';
+import { IdResponse } from '../types/shared.types';
 import { DEV_API_BASE_URL } from '../constants/constants';
 
 @Injectable({
@@ -27,8 +27,8 @@ export class ApiService<T> {
         });
     }
 
-    put(endpoint: string, data: T, params: Object = {}) {
-        return this.http.put<IdResponse>(`${this.BASE_URL}/${endpoint}`, data, {
+    put<UpdateType>(endpoint: string, data: UpdateType, params: Object = {}) {
+        return this.http.put<UpdateType>(`${this.BASE_URL}/${endpoint}`, data, {
             ...params,
             headers: this.headers
         });

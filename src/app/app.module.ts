@@ -9,6 +9,7 @@ import { NavModule } from './shared/ui/nav/nav.module';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { HttpClientModule } from '@angular/common/http';
 import { LoaderModule } from './shared/ui/loader/loader.module';
+import { ConfirmModalModule } from './shared/ui/confirm-modal/confirm-modal.module';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { LoaderModule } from './shared/ui/loader/loader.module';
     NavModule,
     FontAwesomeModule,
     HttpClientModule,
-    LoaderModule
+    LoaderModule,
+    ConfirmModalModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,13 @@
+<div class="full-screen-wrapper" *ngIf="modalConfig && modalOpened">
+    <div class="modal">
+        <div class="modal-body">
+            <h1>
+                {{modalConfig.text}}
+            </h1>
+        </div>
+        <div class="modal-footer">
+            <tm-button text="Cancel" [isAlt]="true" [bgColor]="'transparent'" (onClick)="modalConfig.onCancel()"></tm-button>
+            <tm-button text="Confirm" (onClick)="modalConfig.onConfirm()"></tm-button>
+        </div>
+    </div>
+</div>

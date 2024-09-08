@@ -3,7 +3,7 @@ import { OfferDataService } from '../../data-access/offer-data.service';
 import { Offer } from '../../types/offer.types';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { OfferSearchParams } from '../../types/offer.types';
-import { LoadingService } from '../../../shared/utils/loadingService';
+import { LoadingService } from '../../../shared/utils/loading-service';
 import { AuthService } from '../../../my-account/utils/auth.service';
 
 @Component({
