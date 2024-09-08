@@ -1,0 +1,21 @@
+<main>
+    <h1>Your Exchange Offers</h1>
+    <div class="filter-container">
+        <input 
+            type="radio" 
+            id="to" 
+            name="whichOffers" 
+            [(ngModel)]="displayOffersToUser" 
+            [value]="true" 
+            (change)="loadOffers()">
+        <label for="to">Offers to you</label>
+        <input type="radio" 
+            id="from" 
+            name="whichOffers" 
+            [(ngModel)]="displayOffersToUser" 
+            [value]="false" 
+            (change)="loadOffers()">
+        <label for="from">Offers from you</label>
+    </div>
+    <tm-exchange-offers-list *ngIf="exchangeOffers" [exchangeOffers]="exchangeOffers"></tm-exchange-offers-list>
+</main>

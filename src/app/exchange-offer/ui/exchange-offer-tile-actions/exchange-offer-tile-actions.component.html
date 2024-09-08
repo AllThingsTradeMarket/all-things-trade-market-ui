@@ -1,0 +1,17 @@
+<div class="actions-wrapper" *ngIf="actionsConfig">
+    <section class="current-status-section">
+        Exchange offer status: <span [ngStyle]="{
+            'color': colors[currentStatus]
+        }">{{ currentStatus }}</span>
+    </section>
+    <section class="actions-section">
+        <tm-button *ngFor="let action of actionsConfig"
+            [text]="action.text"
+            [bgColor]="action.color"
+            (onClick)="action.onClick()"
+            [ngStyle]="{
+                'display': action.displayAction ? 'block' : 'none'
+            }">
+        </tm-button>
+    </section>
+</div>

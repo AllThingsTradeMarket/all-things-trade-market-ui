@@ -1,0 +1,11 @@
+<div class="exchange-offer-tile" *ngIf="tileConfig">
+    <tm-exchange-offer-tile-offered-product-section
+        [exchangeOffer]="exchangeOffer"
+        [sectionTtile]="tileConfig.title1">
+    </tm-exchange-offer-tile-offered-product-section>
+    <tm-exchange-offer-tile-requested-product-section 
+        [exchangeOffer]="exchangeOffer"
+        [sectionTtile]="tileConfig.title2">
+    </tm-exchange-offer-tile-requested-product-section>
+    <tm-exchange-offer-tile-actions [currentStatus]="exchangeOffer.status" [isOfferToCurrentUser]="isOfferToCurrentUser"></tm-exchange-offer-tile-actions>
+</div>

@@ -7,14 +7,10 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "add-route": "scripts/add-route/add-route.sh",
-    "add-feature": "scripts/add-feature/add-feature.sh",
-    "add-shell-module": "scripts/add-shell-module/add-shell-module.sh",
-    "add-ui-c": "scripts/add-ui-component/add-ui-component.sh",
-    "add-route-win": "node scripts\\add-route\\add-route.js",
-    "add-feature-win": "node scripts\\add-feature\\add-feature.js",
-    "add-shell-module-win": "node scripts\\add-shell-module\\add-shell-module.js",
-    "add-ui-c-win": "node scripts\\add-ui-component\\add-ui-component.js"
+    "add-route": "node scripts\\add-route\\add-route.js",
+    "add-feature": "node scripts\\add-feature\\add-feature.js",
+    "add-shell-module": "node scripts\\add-shell-module\\add-shell-module.js",
+    "add-ui-c": "node scripts\\add-ui-component\\add-ui-component.js"
   },
   "private": true,
   "dependencies": {

@@ -1,0 +1,9 @@
+<div class="exchange-offers-list" *ngIf="exchangeOffers">
+    <div class="empty-message" *ngIf="offersEmpty()">
+        No offers
+    </div>
+    <tm-exchange-offer-tile 
+        *ngFor="let exchangeOffer of exchangeOffers"
+        [exchangeOffer]="exchangeOffer">
+    </tm-exchange-offer-tile>
+</div>

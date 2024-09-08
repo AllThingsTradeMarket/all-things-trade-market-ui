@@ -1,0 +1,16 @@
+<div class="offer-small-tile">
+    <section class="image-section">
+        <img [src]="getOfferImagePath()" alt="Image not found" class="image">
+    </section>
+    <section class="data-section">
+        <h3 class="offer-title">
+            {{offer.title}}
+        </h3>
+        <span>
+            Buy now price: <b>{{offer.price}}$</b>
+        </span>
+        <span>
+            since: {{offer.dateCreated}}
+        </span>
+    </section>
+</div>

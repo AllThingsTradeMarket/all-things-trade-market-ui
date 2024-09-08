@@ -11,9 +11,9 @@ export type ExchangeOfferSearchParams = {
 };
 
 export type ExchangeOffer = {
-    id: string;
-    senderId: string;
-    receiverId: string;
+    id: number;
+    senderId: number;
+    receiverId: number;
     date: string;
     status: ExchangeOfferStatus;
     offeredCash?: number;
@@ -31,3 +31,9 @@ export type ExchangeOfferCreatorPayload = {
     offeredProductsIds: string[];
 };
 
+export type ExchangeOfferTileActionConfig = {
+    displayAction: boolean;
+    text: string;
+    onClick: () => void;
+    color: string;
+};

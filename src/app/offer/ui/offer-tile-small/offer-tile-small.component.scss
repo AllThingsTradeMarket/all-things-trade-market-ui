@@ -1,0 +1,24 @@
+@import '../../../../styles/tm-mixins.scss';
+@import '../../../../styles/tm-variables.scss';
+
+.offer-small-tile {
+    @include flex-layout($gap: 0);
+    @include container();
+    border: 2px $main-color-light solid;
+    padding: 0;
+    width: calc($small-offer-tile-width - 60px);
+    font-size: $fs-smaller;
+    .image {
+        width: 100%;
+        aspect-ratio: 259/194;
+    }
+
+    .data-section {
+        padding: $padding-l;
+        padding-top: 0;
+        .offer-title {
+            margin-bottom: 0;
+        }
+        @include flex-layout($gap: .2rem);
+    }
+}

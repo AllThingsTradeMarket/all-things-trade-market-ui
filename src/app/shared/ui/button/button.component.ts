@@ -9,6 +9,7 @@ export class ButtonComponent {
   @Input() text!: string;
   @Input() fontSize: string = '1em';
   @Input() disabled: boolean = false;
+  @Input() bgColor: string = '#fd5611';
   @Input() isAlt!: boolean;
   @Output() onClick = new EventEmitter();
 

@@ -5,7 +5,7 @@
     @include flex-layout($gap: 0);
     @include container();
     padding: 0;
-    width: 270px;
+    width: $small-offer-tile-width;
     .image {
         width: 100%;
         aspect-ratio: 259/194;

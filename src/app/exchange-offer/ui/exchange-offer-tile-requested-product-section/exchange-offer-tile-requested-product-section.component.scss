@@ -1,0 +1,17 @@
+@import '../../../../styles/tm-mixins.scss';
+@import '../../../../styles/tm-variables.scss';
+
+.tile-section {
+    @include flex-layout();
+    padding: $padding-l;
+    .section-title {
+        font-size: $fs-bigger;
+        font-weight: bold;
+    }
+
+    .products-wrapper {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: .5 * $default-gap;
+    }
+}

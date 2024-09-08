@@ -57,7 +57,7 @@ export class OfferExchangePage implements OnInit {
       {
         next: response => {
           console.log(response);
-          this.router.navigate(['offers/my-offers']);
+          this.router.navigate(['exchange_offers/yours']);
           this.loadingService.setIsLoading(false);
         },
         error: error => {

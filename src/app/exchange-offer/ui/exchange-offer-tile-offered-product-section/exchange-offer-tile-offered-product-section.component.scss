@@ -1,0 +1,32 @@
+@import '../../../../styles/tm-mixins.scss';
+@import '../../../../styles/tm-variables.scss';
+
+:host {
+    border-right: solid $sub-text-color 3px;
+    padding-right: 2rem;
+}
+
+.tile-section {
+    padding: $padding-l;
+    @include flex-layout();
+    .section-title {
+        font-size: $fs-bigger;
+        font-weight: bold;
+    }
+
+    .products-wrapper {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: .5 * $default-gap;
+    }
+}
+
+.tile-section.offered-products {
+    .offered-cash {
+        font-size: $fs-bigger;
+    }
+    .plus-icon {
+        font-size: $fs-huge;
+        align-self: center;
+    }
+}

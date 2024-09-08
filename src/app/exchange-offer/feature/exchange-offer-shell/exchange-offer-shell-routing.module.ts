@@ -8,6 +8,13 @@ const routes: Routes = [
       import('../offer-exchange/offer-exchange.module').then(
         m => m.OfferExchangePageModule
       )
+  },
+  {
+    path: 'yours',
+    loadChildren: () => 
+      import('../your-exchange-offers/your-exchange-offers.module').then(
+        m => m.YourExchangeOffersPageModule
+      )
   }
 ];
 

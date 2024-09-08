@@ -1,0 +1,9 @@
+@import '../../../../styles/tm-mixins.scss';
+
+.exchange-offers-list {
+    @include flex-layout();
+
+    .empty-message {
+        font-size: $fs-large;
+    }
+}

@@ -1,0 +1,16 @@
+@import '../../../../styles/tm-mixins.scss';
+@import '../../../../styles/tm-variables.scss';
+
+:host {
+    grid-column: 1/-1;
+}
+
+.actions-wrapper {
+    padding: $padding-l;
+    padding-top: $padding-m;
+    border-top: 3px solid $sub-text-color;
+    @include flex-layout(row, center, space-between);
+    .actions-section {
+        @include flex-layout(row);
+    }
+}

@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-import { AuthUserDto, AuthenticatedUserDto, CreateUserDto } from "../model/user.dtos";
+import { AuthUserDto, AuthenticatedUserDto, CreateUserDto, User, UserSearchParams } from "../types/user.types";
 import { ApiService } from "../../shared/utils/apiService";
 import { Observable, BehaviorSubject } from "rxjs";
 import { CURRENT_USER_LOCAL_STORAGE_KEY } from "../../shared/constants/constants";
@@ -16,7 +16,7 @@ export class AuthService {
     private isLoggedSubject: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(!isNil(localStorage.getItem(CURRENT_USER_LOCAL_STORAGE_KEY)));
 
     constructor(private apiRegisterService: ApiService<CreateUserDto>, private apiLoginService: ApiService<AuthUserDto>,  private router: Router,
-        private loadingService: LoadingService
+        private loadingService: LoadingService, private userApiService: ApiService<User>
     ) {
     };
 
@@ -49,5 +49,13 @@ export class AuthService {
             return userData.id;
         }
         return 'no user logged';
+    }
+
+    getUserById(userId: string) {
+        return this.userApiService.get(`${this.registerEndpoint}/${userId}`);
+    }
+
+    getUsersByParams(params: UserSearchParams) {
+        return this.userApiService.get<User[]>(this.registerEndpoint, params);
     }
 }

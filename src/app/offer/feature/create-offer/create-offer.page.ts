@@ -14,7 +14,7 @@ import { LoadingService } from '../../../shared/utils/loadingService';
   styleUrls: ['./create-offer.page.scss']
 })
 export class CreateOfferPage implements OnInit {
-  readonly validExtensions = ['jpg', 'png', 'jpeg'];
+  readonly validExtensions = ['jpg', 'png', 'jpeg', 'webp'];
   readonly cameraIcon = faCamera;
   formData: CreateOfferDto = {
     userId: '',

@@ -1,0 +1,13 @@
+@import '../../../../styles/tm-mixins.scss';
+
+main {
+    @include flex-layout();
+
+    .filter-container {
+        label, input {
+            &:hover {
+                cursor: pointer;
+            }
+        }
+    }
+}

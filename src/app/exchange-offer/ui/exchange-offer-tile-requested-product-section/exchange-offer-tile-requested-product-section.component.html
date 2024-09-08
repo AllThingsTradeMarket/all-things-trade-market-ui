@@ -1,0 +1,9 @@
+<section class="tile-section">
+    <span class="section-title">{{ sectionTtile }}</span>
+    <div class="products-wrapper">
+        <tm-offer-tile-small 
+            *ngFor="let requestedProduct of exchangeOffer.requestedProducts"
+            [offer]="requestedProduct">
+        </tm-offer-tile-small>
+    </div>
+</section>
