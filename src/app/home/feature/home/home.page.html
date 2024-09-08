@@ -1,4 +1,4 @@
 <div class="wrapper">
-    <h1>Welcome on home page</h1>
-    <!-- <tm-top-offers-bar [topOffers]="topOffers"></tm-top-offers-bar> -->
+    <h1 *ngIf="!userLogged">Welcome on home page</h1>
+    <h1 *ngIf="userLogged">Hello, {{username}}!</h1>
 </div>

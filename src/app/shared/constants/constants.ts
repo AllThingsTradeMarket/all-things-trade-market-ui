@@ -8,7 +8,9 @@ export const navItemTypes = {
     LINK: 'link'
 } as const;
 
-export const DEV_API_BASE_URL = 'http://localhost:3000/api';
+export const BACKEND_APP_URL = 'http://localhost:3000';
+export const DEV_API_BASE_URL = `${BACKEND_APP_URL}/api`;
+
 
 export const DEFAULT_CONFIRM_MODAL_CONFIG: ConfirmModalConfig = {
     onCancel: () => {},

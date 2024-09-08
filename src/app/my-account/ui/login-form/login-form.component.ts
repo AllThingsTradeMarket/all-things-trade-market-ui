@@ -25,15 +25,23 @@ export class LoginFormComponent {
          this.authService.signIn({
             email: createdUser.email!,
             password: createdUser.password!,
-         }).subscribe((response) => {
-            try {
-               const user = response;
-               localStorage.setItem(CURRENT_USER_LOCAL_STORAGE_KEY, JSON.stringify(user));
-               this.authService.setIsLogged(true);
+         }).subscribe({
+            next: (response) => {
+               try {
+                  const user = response;
+                  localStorage.setItem(CURRENT_USER_LOCAL_STORAGE_KEY, JSON.stringify(user));
+                  this.authService.setIsLogged(true);
+                  this.loadingService.setIsLoading(false);
+                  this.router.navigate(['/']);
+               } catch (error) {
+                  this.loadingService.setIsLoading(false);
+                  console.error(`error occured: ${error}`);
+               }
+            },
+            error: (error) => {
                this.loadingService.setIsLoading(false);
-               this.router.navigate(['/']);
-            } catch (error) {
                console.error(`error occured: ${error}`);
+               alert('Wrong credentials!');
             }
          });
       } else {

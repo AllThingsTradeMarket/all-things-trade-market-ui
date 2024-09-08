@@ -1,5 +1,6 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { HomePageDataService } from '../../data-access/home-page-data.service';
+import { AuthService } from '../../../my-account/utils/auth.service';
 
 @Component({
   selector: 'tm-home',
@@ -7,10 +8,15 @@ import { HomePageDataService } from '../../data-access/home-page-data.service';
   styleUrls: ['./home.page.scss']
 })
 export class HomePage implements OnInit {
+  userLogged!: boolean;
+  username!: string | undefined;
+  constructor(private homePageDataService: HomePageDataService, private authService: AuthService) { }
 
-  constructor(private homePageDataService: HomePageDataService) {
-
+  ngOnInit() { 
+    this.authService.getIsLogged().subscribe(isLogged => {
+      this.userLogged = isLogged;
+      this.username = isLogged ? this.authService.getCurrentUserUsername() : undefined;
+    });
   }
 
-  ngOnInit() { }
 }

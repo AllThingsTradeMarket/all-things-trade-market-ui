@@ -57,10 +57,8 @@ export class CreateOfferPage implements OnInit {
     this.offerDataService.createOffer(formData).subscribe({
       next: response => {
         console.log(response);
-        if (response.id) {
-          this.loadingService.setIsLoading(false);
-          this.router.navigate(['offers/my-offers']);
-        }
+        this.loadingService.setIsLoading(false);
+        this.router.navigate(['offers/my-offers']);
       },
       error: error => {
         console.error(error);

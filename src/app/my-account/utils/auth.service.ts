@@ -51,6 +51,15 @@ export class AuthService {
         return 'no user logged';
     }
 
+    getCurrentUserUsername() {
+        const userDataJson = localStorage.getItem(CURRENT_USER_LOCAL_STORAGE_KEY);
+        if (userDataJson) {
+            const userData = JSON.parse(userDataJson);
+            return userData.username;
+        }
+        return 'no user logged';
+    }
+
     getUserById(userId: string) {
         return this.userApiService.get(`${this.registerEndpoint}/${userId}`);
     }
