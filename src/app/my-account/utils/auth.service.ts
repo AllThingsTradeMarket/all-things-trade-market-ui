@@ -1,8 +1,8 @@
 import { Injectable } from "@angular/core";
 import { AuthUserDto, AuthenticatedUserDto, CreateUserDto, User, UserSearchParams } from "../types/user.types";
 import { ApiService } from "../../shared/utils/api-service";
-import { Observable, BehaviorSubject } from "rxjs";
-import { CURRENT_USER_LOCAL_STORAGE_KEY } from "../../shared/constants/constants";
+import { Observable, BehaviorSubject, timeout } from "rxjs";
+import { CURRENT_USER_LOCAL_STORAGE_KEY, TIMEOUT_DURATION } from "../../shared/constants/constants";
 import { Router } from "@angular/router";
 import { isNil } from "lodash";
 import { LoadingService } from "../../shared/utils/loading.service";
@@ -15,13 +15,16 @@ export class AuthService {
     private readonly loginEndpoint = 'users/login';
     private isLoggedSubject: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(!isNil(localStorage.getItem(CURRENT_USER_LOCAL_STORAGE_KEY)));
 
-    constructor(private apiRegisterService: ApiService<CreateUserDto>, private apiLoginService: ApiService<AuthUserDto>,  private router: Router,
+    constructor(private apiRegisterService: ApiService<CreateUserDto>, private apiLoginService: ApiService<AuthUserDto>, private router: Router,
         private loadingService: LoadingService, private userApiService: ApiService<User>
     ) {
     };
 
     createUser(user: CreateUserDto) {
-        return this.apiRegisterService.post(this.registerEndpoint, user);
+        return this.apiRegisterService.post(this.registerEndpoint, user)
+            .pipe(
+                timeout(TIMEOUT_DURATION)
+            );
     }
 
     signIn(user: AuthUserDto): Observable<AuthenticatedUserDto> {

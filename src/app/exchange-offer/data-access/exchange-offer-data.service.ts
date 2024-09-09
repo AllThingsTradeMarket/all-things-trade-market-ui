@@ -2,9 +2,10 @@ import { Injectable } from "@angular/core";
 import { ApiService } from "../../shared/utils/api-service";
 import { AuthService } from "../../my-account/utils/auth.service";
 import { ExchangeOffer, ExchangeOfferSearchParams, ExchangeOfferStatus } from "../types/exchange_offer.types";
-import { Observable } from "rxjs";
+import { Observable, timeout } from "rxjs";
 import { IdResponse } from "../../shared/types/shared.types";
 import { CreateExchangeOfferDto, UpdateExchangeOfferStatusDto } from "../dtos/exchange_offer.dtos";
+import { TIMEOUT_DURATION } from "../../shared/constants/constants";
 
 @Injectable({
     providedIn: 'root'
@@ -15,7 +16,10 @@ export class ExchangeOfferDataService {
     constructor(private exchangeOfferApiService: ApiService<ExchangeOffer>, private authService: AuthService) { }
 
     createExchangeOffer(exchangeOffer: CreateExchangeOfferDto): Observable<IdResponse> {
-        return this.exchangeOfferApiService.post<IdResponse, CreateExchangeOfferDto>(this.endpoint, exchangeOffer, undefined);
+        return this.exchangeOfferApiService.post<IdResponse, CreateExchangeOfferDto>(this.endpoint, exchangeOffer, undefined)
+            .pipe(
+                timeout(TIMEOUT_DURATION)
+            );
     }
 
     getExchangeOffersByParameters(params: ExchangeOfferSearchParams): Observable<ExchangeOffer[]> {
@@ -25,6 +29,8 @@ export class ExchangeOfferDataService {
     updateExchangeOfferStatus(id: number, exchangeOfferStatus: ExchangeOfferStatus) {
         return this.exchangeOfferApiService.put<UpdateExchangeOfferStatusDto>(`${this.endpoint}/${id}`, {
             status: exchangeOfferStatus
-        });
+        }).pipe(
+            timeout(TIMEOUT_DURATION)
+        );
     }
 };

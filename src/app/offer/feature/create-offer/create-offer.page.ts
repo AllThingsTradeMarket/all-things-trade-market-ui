@@ -66,6 +66,9 @@ export class CreateOfferPage implements OnInit {
       error: error => {
         console.error(error);
         this.loadingService.setIsLoading(false);
+        if (error instanceof Error) {
+          alert(error.message);
+        }
       }
     });
   }

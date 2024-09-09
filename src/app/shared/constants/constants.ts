@@ -17,3 +17,5 @@ export const DEFAULT_CONFIRM_MODAL_CONFIG: ConfirmModalConfig = {
     onConfirm: () => {},
     text: 'Do You confirm?'
 }
+
+export const TIMEOUT_DURATION = 11000;
