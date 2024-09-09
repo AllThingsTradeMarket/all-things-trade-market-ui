@@ -3,12 +3,14 @@
 
 .form-wrapper {
     @include centered-hor();
+
     .form-container {
         width: max(40%, 350px);
-    
+
         .register-form {
             width: 100%;
             @include flex-layout();
+
             .form-control {
                 color: white;
                 width: 100%;
@@ -16,6 +18,10 @@
                 background-color: transparent;
                 padding: $padding-s $padding-m;
             }
+        }
+
+        .form-invalid-message {
+            color: red;
         }
 
         .sub-link {

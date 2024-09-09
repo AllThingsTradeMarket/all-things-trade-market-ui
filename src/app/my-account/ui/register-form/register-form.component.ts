@@ -34,9 +34,18 @@ export class RegisterFormComponent {
         username: createdUser.username!,
         firstName: createdUser.firstName!,
         lastName: createdUser.lastName!
-      }).subscribe(() => {
-        this.loadingService.setIsLoading(false);
-        this.router.navigate(['my-account/login']);
+      }).subscribe({
+        next: () => {
+          this.loadingService.setIsLoading(false);
+          this.router.navigate(['my-account/login']);
+        },
+        error: error => {
+          console.error(error);
+          this.loadingService.setIsLoading(false);
+        },
+        complete: () => {
+          this.loadingService.setIsLoading(false);
+        }
       });
     } else {
       console.error('Form is invalid');

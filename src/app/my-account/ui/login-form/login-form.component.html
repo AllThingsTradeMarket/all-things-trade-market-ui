@@ -1,14 +1,14 @@
  
 <main class="form-wrapper">
     <tm-container class="form-container">
-        <h2>Create an account</h2>
+        <h2>Sign into your account</h2>
         <form class="register-form" [formGroup]="userForm" (ngSubmit)="onSubmit()">
             <input class="form-control" id="email" formControlName="email" placeholder="Email" />
             <input class="form-control" id="password" type="password" formControlName="password" placeholder="Password" />
             <tm-button [disabled]="!userForm.valid" text="Sign in" class="submit-btn"></tm-button>
         </form>
 
-        <div *ngIf="userForm.invalid && (userForm.touched || userForm.dirty)">
+        <div *ngIf="userForm.invalid && (userForm.touched || userForm.dirty)" class="form-invalid-message">
             <p>Please fill in all fields correctly.</p>
         </div>
         <a routerLink="../register" class="sub-link">Don't have an account? Register</a>

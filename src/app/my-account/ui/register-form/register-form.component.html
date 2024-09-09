@@ -12,7 +12,7 @@
             <tm-button [disabled]="!userForm.valid" text="Register" class="submit-btn"></tm-button>
         </form>
 
-        <div *ngIf="userForm.invalid && (userForm.touched || userForm.dirty)">
+        <div *ngIf="userForm.invalid && (userForm.touched || userForm.dirty)" class="form-invalid-message">
             <p>Please fill in all fields correctly.</p>
         </div>
         <a routerLink="../login" class="sub-link">Already have an account? Sign in</a>

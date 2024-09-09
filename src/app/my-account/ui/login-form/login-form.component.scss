@@ -16,6 +16,10 @@
             }
         }
 
+        .form-invalid-message {
+            color: red;
+        }
+        
         .sub-link {
             &:hover {
                 text-decoration: underline;

@@ -50,7 +50,7 @@ export class AuthService {
             const userData = JSON.parse(userDataJson);
             return userData.id;
         }
-        return 'no user logged';
+        return -1;
     }
 
     getCurrentUserUsername() {
