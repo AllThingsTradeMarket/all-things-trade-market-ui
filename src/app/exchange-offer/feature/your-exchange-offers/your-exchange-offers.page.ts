@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { OfferDataService } from '../../../offer/data-access/offer-data.service';
 import { AuthService } from '../../../my-account/utils/auth.service';
 import { ExchangeOfferDataService } from '../../data-access/exchange-offer-data.service';
-import { LoadingService } from '../../../shared/utils/loading-service';
+import { LoadingService } from '../../../shared/utils/loading.service';
 import { Router } from '@angular/router';
 import { ExchangeOffer, ExchangeOfferSearchParams } from '../../types/exchange_offer.types';
 import { isEmpty } from 'lodash';

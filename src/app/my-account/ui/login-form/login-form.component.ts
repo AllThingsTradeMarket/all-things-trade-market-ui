@@ -3,7 +3,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from '../../utils/auth.service';
 import { CURRENT_USER_LOCAL_STORAGE_KEY } from '../../../shared/constants/constants';
-import { LoadingService } from '../../../shared/utils/loading-service';
+import { LoadingService } from '../../../shared/utils/loading.service';
 
 @Component({
    selector: 'tm-login-form',

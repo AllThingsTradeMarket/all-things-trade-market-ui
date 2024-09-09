@@ -10,7 +10,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { HttpClientModule } from '@angular/common/http';
 import { LoaderModule } from './shared/ui/loader/loader.module';
 import { ConfirmModalModule } from './shared/ui/confirm-modal/confirm-modal.module';
-
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,9 +25,12 @@ import { ConfirmModalModule } from './shared/ui/confirm-modal/confirm-modal.modu
     FontAwesomeModule,
     HttpClientModule,
     LoaderModule,
+    MatSnackBarModule,
     ConfirmModalModule
   ],
-  providers: [],
+  providers: [
+    provideAnimationsAsync()
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

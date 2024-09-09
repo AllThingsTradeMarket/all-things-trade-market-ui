@@ -6,7 +6,7 @@ import { AuthService } from '../../../my-account/utils/auth.service';
 import { ExchangeOfferCreatorPayload } from '../../types/exchange_offer.types';
 import { CreateExchangeOfferDto } from '../../dtos/exchange_offer.dtos';
 import { ExchangeOfferDataService } from '../../data-access/exchange-offer-data.service';
-import { LoadingService } from '../../../shared/utils/loading-service';
+import { LoadingService } from '../../../shared/utils/loading.service';
 
 @Component({
   selector: 'tm-offer-exchange',

@@ -3,7 +3,7 @@ import { ExchangeOfferStatus, ExchangeOfferTileActionConfig } from '../../types/
 import { exchangeStatusses } from '../../constants/exchange-offer.constants';
 import { ConfirmModalService } from '../../../shared/utils/confirm-modal.service';
 import { ExchangeOfferDataService } from '../../data-access/exchange-offer-data.service';
-import { LoadingService } from '../../../shared/utils/loading-service';
+import { LoadingService } from '../../../shared/utils/loading.service';
 
 @Component({
   selector: 'tm-exchange-offer-tile-actions',

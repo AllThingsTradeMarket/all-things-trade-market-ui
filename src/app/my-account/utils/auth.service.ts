@@ -5,7 +5,7 @@ import { Observable, BehaviorSubject } from "rxjs";
 import { CURRENT_USER_LOCAL_STORAGE_KEY } from "../../shared/constants/constants";
 import { Router } from "@angular/router";
 import { isNil } from "lodash";
-import { LoadingService } from "../../shared/utils/loading-service";
+import { LoadingService } from "../../shared/utils/loading.service";
 
 @Injectable({
     providedIn: 'root'
@@ -35,6 +35,8 @@ export class AuthService {
     getIsLogged(): Observable<boolean> {
         return this.isLoggedSubject.asObservable();
     }
+
+    userIsLogged = () => !isNil(localStorage.getItem(CURRENT_USER_LOCAL_STORAGE_KEY));
 
     logout() {
         localStorage.removeItem(CURRENT_USER_LOCAL_STORAGE_KEY);

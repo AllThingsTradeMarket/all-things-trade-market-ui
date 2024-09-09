@@ -6,7 +6,8 @@ import { ImageContainerConfig } from '../../types/offer.types';
 import { isNil } from 'lodash';
 import { AuthService } from '../../../my-account/utils/auth.service';
 import { Router } from '@angular/router';
-import { LoadingService } from '../../../shared/utils/loading-service';
+import { LoadingService } from '../../../shared/utils/loading.service';
+import { NotificationService } from '../../../shared/utils/notification.service';
 
 @Component({
   selector: 'tm-create-offer',
@@ -33,7 +34,8 @@ export class CreateOfferPage implements OnInit {
 
   @ViewChild('fileInput') fileInput: any;
 
-  constructor(private offerDataService: OfferDataService, private authService: AuthService, private router: Router, private loadingService: LoadingService) { }
+  constructor(private offerDataService: OfferDataService, private authService: AuthService, 
+    private router: Router, private loadingService: LoadingService, private notificationService: NotificationService) { }
 
   ngOnInit() {
     this.initImageFieldsConfig();
@@ -58,6 +60,7 @@ export class CreateOfferPage implements OnInit {
       next: response => {
         console.log(response);
         this.loadingService.setIsLoading(false);
+        this.notificationService.displayNotification('You have successfully created an offer!');
         this.router.navigate(['offers/my-offers']);
       },
       error: error => {
